@@ -1,4 +1,3 @@
-// woojinklsdjflksdjfkfj
 var triangleOrientation;
 var triangleOrientation2;
 var triangleOrientation3;
@@ -70,8 +69,8 @@ function setup()
   triangleY4 = 350;
   triangleX5 = 300;
   triangleY5 = 200;
-  
-  
+
+
 
   triangleDistance = 1000;
   triangleDistance2 = 1000;
@@ -84,13 +83,13 @@ function setup()
   lock3 = false;
   lock4 = false;
   lock5 = false;
-  
+
   lockTriangleOrientation = false;
   lockTriangleOrientation2 = false;
   lockTriangleOrientation3 = false;
   lockTriangleOrientation4 = false;
   lockTriangleOrientation5 = false;
-  
+
   stickLocation1X = 305;
   stickLocation1Y = 300;
   stickLocation2X = 195;
@@ -101,26 +100,35 @@ function setup()
   stickLocation4Y = 285;
   stickLocation5X = 400;
   stickLocation5Y = 130;
-  
+
   permenantLock1 = false;
   permenantLock2 = false;
   permenantLock3 = false;
   permenantLock4 = false;
   permenantLock5 = false;
-  
+
+
+
 }
+
+function preload()
+{
+  key = loadImage('https://dl.dropboxusercontent.com/s/irrwhwfs5oqte14/Key.png');  
+
+}
+
 
 function draw()
 {
   background(255,255,255);         
- 
-  
+
+
   //outline puzzle 
   fill(204,102,0);
   stroke(113,70,0);
   strokeWeight(9);
   rect(10,10,570,480);
-  
+
   strokeWeight(1);
   showHelpText();
 
@@ -130,39 +138,39 @@ function draw()
     changeTriangleOrientation1();
   }
   drawTriangle1();
-  
+
 
   if (permenantLock2 == false)
   {
-   moveTriangle2();
-   changeTriangleOrientation2();
+    moveTriangle2();
+    changeTriangleOrientation2();
   }
-  
+
   drawTriangle2();
-  
+
   if (permenantLock3 == false)
   {
-  moveTriangle3();
-  changeTriangleOrientation3();
+    moveTriangle3();
+    changeTriangleOrientation3();
   }
   drawTriangle3();
-  
+
   if (permenantLock4 == false)
   {
-  moveTriangle4();
-  changeTriangleOrientation4();
+    moveTriangle4();
+    changeTriangleOrientation4();
   }
   drawTriangle4();
 
   if (permenantLock5 == false)
   {
-  moveTriangle5();
-  changeTriangleOrientation5();
+    moveTriangle5();
+    changeTriangleOrientation5();
   }
   drawTriangle5();
-  
+
   reward();
-  
+
 }
 
 function showHelpText()
@@ -197,7 +205,7 @@ function moveTriangle1()
     stickDistance = sqrt((stickLocation1X-mouseX)*(stickLocation1X-mouseX)+(stickLocation1Y-mouseY)*(stickLocation1Y-mouseY))
 
     text(stickDistance,10,150);
-    
+
     if (triangleOrientation == 1 && stickDistance < 25)
     {
       triangleX = stickLocation1X;
@@ -227,7 +235,7 @@ function moveTriangle2()
     fill(255,255,0);
     triangleX2 = mouseX;
     triangleY2 = mouseY;
-    
+
     stickDistance2 = sqrt((stickLocation2X-mouseX)*(stickLocation2X-mouseX)+(stickLocation2Y-mouseY)*(stickLocation2Y-mouseY))
 
     text(stickDistance2,10,150);
@@ -246,9 +254,9 @@ function moveTriangle2()
 function moveTriangle3()
 {
   fill(153,76,0);
-  
+
   trangleDistance3 = sqrt((triangleX3-mouseX)*(triangleX3-mouseX)+(triangleY3-mouseY)*(triangleY3-mouseY))
-  
+
   if (triangleDistance3 < 30)
   {
     fill(0,255,0);
@@ -258,7 +266,7 @@ function moveTriangle3()
     }
   }
 
-  
+
   if (lock3 == true)
   {
     fill(255,255,0);
@@ -276,7 +284,7 @@ function moveTriangle3()
       permenantLock3 = true;
     }
   }
-  
+
 }
 
 function moveTriangle4()
@@ -293,7 +301,7 @@ function moveTriangle4()
       lock4 = true;
     }
   }
-  
+
   if (lock4 == true)
   {
     fill(255,255,0);
@@ -311,7 +319,7 @@ function moveTriangle4()
       permenantLock4 = true;
     }
   }
-  
+
 }
 
 function moveTriangle5()
@@ -357,19 +365,19 @@ function changeTriangleOrientation1()
 
   if (triangleDistance < 30)
   {
-  
-  
+
+
     if (mouseIsPressed == true && mouseButton == LEFT && keyIsPressed == true && key == 'r' && lockTriangleOrientation == false)
     {
       triangleOrientation = triangleOrientation + 1;
       if (triangleOrientation > 2)
-          triangleOrientation = 0;
+        triangleOrientation = 0;
 
       lockTriangleOrientation = true;
     }
   }
 
-  
+
 }
 
 function changeTriangleOrientation2()
@@ -395,7 +403,7 @@ function changeTriangleOrientation2()
 
 function changeTriangleOrientation3()
 {
-  
+
   triangleDistance3= sqrt((triangleX3-mouseX)*(triangleX3-mouseX)+(triangleY3-mouseY)*(triangleY3-mouseY))
 
   if (triangleDistance3 < 30)
@@ -411,7 +419,7 @@ function changeTriangleOrientation3()
       lockTriangleOrientation3 = true;
     }
   }
-  
+
 }
 
 function changeTriangleOrientation4()
@@ -432,7 +440,7 @@ function changeTriangleOrientation4()
     }
   }
 
- 
+
 }
 
 function changeTriangleOrientation5()
@@ -460,40 +468,40 @@ function changeTriangleOrientation5()
 
 function mouseReleased()
 {
-    if (lock)
+  if (lock)
+  {
+    lock = false;
+    d = sqrt((triangleX-triangleX2)*(triangleX-triangleX2)-(triangleY-triangleY2)*(triangleY-triangleY2));
+    if (d < 100)
     {
-      lock = false;
-      d = sqrt((triangleX-triangleX2)*(triangleX-triangleX2)-(triangleY-triangleY2)*(triangleY-triangleY2));
-      if (d < 100)
-      {
-//         triangleX = triangleX2-100;
-//         triangleY = triangleY2-100;
-      }
+      //         triangleX = triangleX2-100;
+      //         triangleY = triangleY2-100;
     }
-  
-    if (lock2)
+  }
+
+  if (lock2)
+  {
+    lock2 = false;
+    d = sqrt((triangleX-triangleX2)*(triangleX-triangleX2)-(triangleY-triangleY2)*(triangleY-triangleY2));
+    if (d < 100)
     {
-       lock2 = false;
-      d = sqrt((triangleX-triangleX2)*(triangleX-triangleX2)-(triangleY-triangleY2)*(triangleY-triangleY2));
-      if (d < 100)
-      {
-//        triangleX2 = triangleX-100;
-//        triangleY2 = triangleY-100;
-      }
+      //        triangleX2 = triangleX-100;
+      //        triangleY2 = triangleY-100;
     }
-    
-    if (lock3)
+  }
+
+  if (lock3)
+  {
+    lock3 = false;
+    d = sqrt((triangleX2-triangleX3)*(triangleX2-triangleX3)-(triangleY2-triangleY3)*(triangleY2-triangleY3));
+    if (d < 100)
     {
-      lock3 = false;
-      d = sqrt((triangleX2-triangleX3)*(triangleX2-triangleX3)-(triangleY2-triangleY3)*(triangleY2-triangleY3));
-      if (d < 100)
-      {
-        // triangleX3 = triangleX2-100;
-        // triangleY3 = triangleY2-100;
-      }
+      // triangleX3 = triangleX2-100;
+      // triangleY3 = triangleY2-100;
     }
-  
-    if (lock4)
+  }
+
+  if (lock4)
   {
     lock4 = false;
     d = sqrt((triangleX3-triangleX4)*(triangleX3-triangleX4)-(triangleY3-triangleY4)*(triangleY3-triangleY4));
@@ -503,46 +511,46 @@ function mouseReleased()
       // triangleY4 = triangleY3-100;
     }
   } 
-  
-    
-    if (lock5)
-    {
-      lock5 = false;
-      d = sqrt((triangleX4-triangleX5)*(triangleX4-triangleX5)-(triangleY4-triangleY5)*(triangleY4-triangleY5));
-      if (d < 100)
-      {
-        // triangleX5 = triangleX4-100;
-        // triangleY5 = triangleY4-100;
-      }
-  }
-  
-  
-    if (lockTriangleOrientation == true)
-    {
-      lockTriangleOrientation = false;
-    }
-  
-    if (lockTriangleOrientation2 == true)
-    {
-      lockTriangleOrientation2 = false;
-    }
-    
-    if (lockTriangleOrientation3 == true)
-    {
-      lockTriangleOrientation3 = false;
-    }
-    
-    if (lockTriangleOrientation4 == true)
-    {
-      lockTriangleOrientation4 = false;
-    }
-    
-    if (lockTriangleOrientation5 == true)
-    {
-      lockTriangleOrientation5 = false;
-    }
 
+
+  if (lock5)
+  {
+    lock5 = false;
+    d = sqrt((triangleX4-triangleX5)*(triangleX4-triangleX5)-(triangleY4-triangleY5)*(triangleY4-triangleY5));
+    if (d < 100)
+    {
+      // triangleX5 = triangleX4-100;
+      // triangleY5 = triangleY4-100;
+    }
   }
+
+
+  if (lockTriangleOrientation == true)
+  {
+    lockTriangleOrientation = false;
+  }
+
+  if (lockTriangleOrientation2 == true)
+  {
+    lockTriangleOrientation2 = false;
+  }
+
+  if (lockTriangleOrientation3 == true)
+  {
+    lockTriangleOrientation3 = false;
+  }
+
+  if (lockTriangleOrientation4 == true)
+  {
+    lockTriangleOrientation4 = false;
+  }
+
+  if (lockTriangleOrientation5 == true)
+  {
+    lockTriangleOrientation5 = false;
+  }
+
+}
 
 function drawTriangle1()
 {
@@ -562,7 +570,7 @@ function drawTriangle1()
   {
     triangle(triangleX+50,triangleY+70,triangleX-50,triangleY-25,triangleX+50,triangleY-25);
   }
-  
+
 }
 
 function drawTriangle2()
@@ -658,6 +666,6 @@ function reward()
   {
     stroke(0,0,0);
     fill(0,0,0);
-    text("Done",10,150);
+    text('done',10,150);
   }
 }
