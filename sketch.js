@@ -664,8 +664,9 @@ function reward()
 {
   if (permenantLock1 == true && permenantLock2 == true && permenantLock3 == true && permenantLock4 == true && permenantLock5 == true)
   {
-    stroke(0,0,0);
-    fill(0,0,0);
-    text('done',10,150);
+   keyx = 200;
+   keyy = 200;
+   keysizex = 150;
+   keysizey = 150;
   }
 }
