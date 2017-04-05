@@ -52,7 +52,7 @@ var maze;
 
 function setup()
 {
-  createCanvas(700,500);
+  createCanvas(700,600);
   triangleOrientation = 1;
   triangleOrientation2 = 2;
   triangleOrientation3 = 1;
@@ -168,10 +168,23 @@ function draw()
     changeTriangleOrientation5();
   }
   drawTriangle5();
-
+  itemGrid();
   reward();
 
 }
+
+function itemGrid()
+{
+  fill(50,50,50);
+  rect(5,493,720,85);
+  fill(125,125,125);
+  rect(20,500,70,70);
+  fill(125,125,125);
+  rect(100,500,70,70);
+  fill(125,125,125);
+  rect(180,500,70,70);
+}
+
 
 function showHelpText()
 {
@@ -664,9 +677,8 @@ function reward()
 {
   if (permenantLock1 == true && permenantLock2 == true && permenantLock3 == true && permenantLock4 == true && permenantLock5 == true)
   {
-   keyx = 200;
-   keyy = 200;
-   keysizex = 150;
-   keysizey = 150;
+    stroke(0,0,0);
+    fill(0,0,0);
+    text('done',10,150);
   }
 }
