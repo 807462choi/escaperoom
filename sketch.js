@@ -107,13 +107,14 @@ function setup()
   permenantLock4 = false;
   permenantLock5 = false;
 
-
+  moveGoldx = 210;
+  moveGoldy = 150;
 
 }
 
 function preload()
 {
-  key = loadImage('https://dl.dropboxusercontent.com/s/irrwhwfs5oqte14/Key.png');  
+  Gold = loadImage('https://dl.dropboxusercontent.com/s/x1mt1n2eqywabny/Coin2.png');  
 
 }
 
@@ -218,6 +219,7 @@ function moveTriangle1()
     stickDistance = sqrt((stickLocation1X-mouseX)*(stickLocation1X-mouseX)+(stickLocation1Y-mouseY)*(stickLocation1Y-mouseY))
 
     text(stickDistance,10,150);
+    
 
     if (triangleOrientation == 1 && stickDistance < 25)
     {
@@ -366,6 +368,7 @@ function moveTriangle5()
       triangleY5 = stickLocation5Y;
       permenantLock5 = true;
     }
+    
   }
 
 }
@@ -675,10 +678,30 @@ function maze()
 
 function reward()
 {
+  circleGold = sqrt((mouseX-285)*(mouseX-285)+(mouseY-225)*(mouseY-225));
+  fill(0,0,0);
+  text(circleGold,10,100);
+  
   if (permenantLock1 == true && permenantLock2 == true && permenantLock3 == true && permenantLock4 == true && permenantLock5 == true)
   {
-    stroke(0,0,0);
-    fill(0,0,0);
-    text('done',10,150);
+//    GoldState = 0;
+
+    image(Gold,moveGoldx,moveGoldy,150,150); 
+    if (circleGold < 75)
+    {
+      cursor(HAND);
+      if (mouseIsPressed == true)
+      {
+        moveGoldx = 20;
+        moveGoldy = 535;
+
+
+      }
+
+    }
+    else 
+    {
+      cursor(ARROW);
+    }
   }
 }
