@@ -1,3 +1,5 @@
+var lazy = 1;
+
 var triangleOrientation;
 var triangleOrientation2;
 var triangleOrientation3;
@@ -47,8 +49,12 @@ var permenantLock4;
 var permenantLock5;
 
 var maze;
+var goldsizex = 150;
+var goldsizey = 150;
+var goldatinv = 0;
 
 
+canvas = 0;
 
 function setup()
 {
@@ -107,7 +113,7 @@ function setup()
   permenantLock4 = false;
   permenantLock5 = false;
 
-  moveGoldx = 210;
+  moveGoldx = 220;
   moveGoldy = 150;
 
 }
@@ -115,16 +121,65 @@ function setup()
 function preload()
 {
   Gold = loadImage('https://dl.dropboxusercontent.com/s/x1mt1n2eqywabny/Coin2.png');  
-
+  IntroJ =  loadImage('https://dl.dropboxusercontent.com/s/adi59zn0kxdwjsd/Japan%20Castle.jpg');
 }
 
 
 function draw()
 {
+
+  if (canvas == 1)
+  {
+    c1();
+  }
+  else if (canvas == 2)
+  {
+    c2();
+  }
+  else if (canvas == 3)
+  {
+    c3();
+  }
+  else
+  {
+    intro();
+  }
+  
+}
+
+function intro()
+{
+
+  background(50,150,150);
+  image(IntroJ,0,0,700,700);
+  
+  fill(255,0,0);
+  rect(250,300,200,50);
+  stroke(0,0,0);
+  text('START',250,250);
+  
+
+  if(mouseIsPressed)
+  {
+    canvas = 1;
+  }
+}
+
+
+function c1()
+{
+  background(69,69,69);
+  if (mouseIsPressed)
+  {
+    canvas = 2;
+  }
+}
+
+function c2()
+{
   background(255,255,255);         
 
-
-  //outline puzzle 
+  //outline puzle 
   fill(204,102,0);
   stroke(113,70,0);
   strokeWeight(9);
@@ -174,6 +229,14 @@ function draw()
 
 }
 
+function c3()
+{
+  background(12,123,254);
+  
+  
+  itemGrid();
+}
+
 function itemGrid()
 {
   fill(50,50,50);
@@ -193,6 +256,7 @@ function showHelpText()
   stroke(0,0,0);
   text("Click and drag objects to move them around",15,25);
   text("Hold 'r' and left click on object to rotate",15,40);
+  text("Helper: ",15,60);
 }
 
 function moveTriangle1()
@@ -218,8 +282,8 @@ function moveTriangle1()
 
     stickDistance = sqrt((stickLocation1X-mouseX)*(stickLocation1X-mouseX)+(stickLocation1Y-mouseY)*(stickLocation1Y-mouseY))
 
-    text(stickDistance,10,150);
-    
+    text(stickDistance,57,60);
+
 
     if (triangleOrientation == 1 && stickDistance < 25)
     {
@@ -253,7 +317,7 @@ function moveTriangle2()
 
     stickDistance2 = sqrt((stickLocation2X-mouseX)*(stickLocation2X-mouseX)+(stickLocation2Y-mouseY)*(stickLocation2Y-mouseY))
 
-    text(stickDistance2,10,150);
+    text(stickDistance2,57,60);
 
     if (triangleOrientation2 == 1 && stickDistance2 < 25)
     {
@@ -289,7 +353,7 @@ function moveTriangle3()
     triangleY3 = mouseY;
     stickDistance3 = sqrt((stickLocation3X-mouseX)*(stickLocation3X-mouseX)+(stickLocation3Y-mouseY)*(stickLocation3Y-mouseY))
 
-    text(stickDistance3,10,150);
+    text(stickDistance3,57,60);
 
     if (triangleOrientation3 == 1 && stickDistance3 < 25)
     {
@@ -324,7 +388,7 @@ function moveTriangle4()
     triangleY4 = mouseY;
     stickDistance4 = sqrt((stickLocation4X-mouseX)*(stickLocation4X-mouseX)+(stickLocation4Y-mouseY)*(stickLocation4Y-mouseY))
 
-    text(stickDistance4,10,150);
+    text(stickDistance4,57,60);
 
     if (triangleOrientation4 == 2 && stickDistance4 < 25)
     {
@@ -359,7 +423,7 @@ function moveTriangle5()
     triangleY5 = mouseY;
     stickDistance5 = sqrt((stickLocation5X-mouseX)*(stickLocation5X-mouseX)+(stickLocation5Y-mouseY)*(stickLocation5Y-mouseY))
 
-    text(stickDistance5,10,150);
+    text(stickDistance5,57,60);
 
     if (triangleOrientation5 == 0 && stickDistance5 < 25)
     {
@@ -368,7 +432,7 @@ function moveTriangle5()
       triangleY5 = stickLocation5Y;
       permenantLock5 = true;
     }
-    
+
   }
 
 }
@@ -680,22 +744,25 @@ function reward()
 {
   circleGold = sqrt((mouseX-285)*(mouseX-285)+(mouseY-225)*(mouseY-225));
   fill(0,0,0);
-  text(circleGold,10,100);
-  
-  if (permenantLock1 == true && permenantLock2 == true && permenantLock3 == true && permenantLock4 == true && permenantLock5 == true)
+  //permenantLock1 == true && permenantLock2 == true && permenantLock3 == true && permenantLock4 == true && permenantLock5 == true
+  if (lazy == 1)
   {
-//    GoldState = 0;
-
-    image(Gold,moveGoldx,moveGoldy,150,150); 
+    //    GoldState = 0;
+    
+    
+    
+    text(circleGold,10,100);
+    image(Gold,moveGoldx,moveGoldy,goldsizex,goldsizey); 
     if (circleGold < 75)
     {
       cursor(HAND);
       if (mouseIsPressed == true)
       {
-        moveGoldx = 20;
-        moveGoldy = 535;
-
-
+        moveGoldx = 30;
+        moveGoldy = 515;
+        goldsizex = 50;
+        goldsizey = 50;
+        goldatinv = 1;
       }
 
     }
@@ -704,4 +771,29 @@ function reward()
       cursor(ARROW);
     }
   }
+  
+  if (goldatinv == 1)
+  {
+    fill(255,50,50);
+    if (mouseX >= 475 && mouseX <= 575 && mouseY >= 15 && mouseY <= 60)
+    {
+      fill(255,100,100);
+      cursor(HAND);
+      if (mouseIsPressed)
+      {
+        canvas = 3;
+      }
+    }
+    else
+    {
+      cursor(ARROW);
+    }
+
+    rect(475,15,100,45);
+    
+    fill(0,0,0);
+    text("X",520,45);
+  }
 }
+
+
