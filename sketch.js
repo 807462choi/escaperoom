@@ -563,6 +563,8 @@ function c12() // tea pot challenge
   
   fill(255,0,0);
   rect(650,0,149,50);
+  text('X',725,35);
+  
   
   if (mouseX >= 650 && mouseX <= 799 && mouseY >= 0 && mouseY <= 50)
   {
@@ -571,12 +573,6 @@ function c12() // tea pot challenge
     {
       canvas = 4;
     }
-    
-    
-    
-    
-    
-    
     
   if (cursorimage == "arrow")
   {
