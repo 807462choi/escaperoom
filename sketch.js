@@ -559,6 +559,7 @@ function c4() // tea room
 function c12() // tea pot challenge
 {
   image(TeaPzzl,0,0,800,600);
+  
   var cursorimage = "arrow";
   
   fill(255,0,0);
@@ -566,6 +567,10 @@ function c12() // tea pot challenge
   fill(0,0,0);
   text('X',725,35);
   
+  
+  ellipse(100,500,100,100);//hot water
+  ellipse(300,500,100,100);//water
+  ellipse(200,500,100,100);//Tea leaves
   
   if (mouseX >= 650 && mouseX <= 799 && mouseY >= 0 && mouseY <= 50)
   {
