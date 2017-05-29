@@ -138,7 +138,9 @@ function preload()
   Guitar = loadImage('https://dl.dropboxusercontent.com/s/pjjc43k7ckdo88d/Close%20up%20of%20the%20guitar.png');
   GuitarF = loadImage('https://dl.dropboxusercontent.com/s/ltdc5r71s3lcyhw/Fretboard.jpg');
   PuzzleS = loadImage('https://dl.dropboxusercontent.com/s/xmxcjqz8slm4a5m/Puzzle%20sign.png');
-    
+  magnifier1 = loadImage('https://dl.dropboxusercontent.com/s/vhm0lyt68h2a5x1/magnifier-multimedia-search-zoom-cursor-512.png'); 
+  ScrollDesign = loadImage('https://dl.dropboxusercontent.com/s/rhku9wuf76euff1/kakejiku1.jpg')
+  TeaPzzl = loadImage('https://dl.dropboxusercontent.com/s/w3trbm8ujdepm2d/TeaPzzl.jpg')
   
   //MUSIC
   IntroMus = loadSound('https://dl.dropboxusercontent.com/s/ye7qx0kuqicr8sm/Intro%20Music.mp3');
