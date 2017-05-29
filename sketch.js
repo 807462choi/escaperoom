@@ -138,13 +138,13 @@ function preload()
   Scrl = loadImage('https://dl.dropboxusercontent.com/s/1a0y1jbicgkqacc/Scroll%20%281%29.png');
   Guitar = loadImage('https://dl.dropboxusercontent.com/s/pjjc43k7ckdo88d/Close%20up%20of%20the%20guitar.png');
   GuitarF = loadImage('https://dl.dropboxusercontent.com/s/ltdc5r71s3lcyhw/Fretboard.jpg');
-  //PuzzleS = loadImage('https://dl.dropboxusercontent.com/s/xmxcjqz8slm4a5m/Puzzle%20sign.png');
+  PuzzleS = loadImage('https://dl.dropboxusercontent.com/s/rspt86wc7htakjl/TeaPzzl.jpg');
 
   magnifier1 = loadImage('https://dl.dropboxusercontent.com/s/vhm0lyt68h2a5x1/magnifier-multimedia-search-zoom-cursor-512.png'); 
   
   ScrollDesign = loadImage('https://dl.dropboxusercontent.com/s/rhku9wuf76euff1/kakejiku1.jpg')
   
-  TeaPzzl = loadImage('https://dl.dropboxusercontent.com/s/rspt86wc7htakjl/TeaPzzl.jpg')
+  TeaPzzl = loadImage('https://dl.dropboxusercontent.com/s/w3trbm8ujdepm2d/TeaPzzl.jpg')
   
 
   //MUSIC
@@ -584,8 +584,8 @@ function c4() // tea room
 
 function c12() // tea pot challenge
 {
-  //image(TeaPzzl,0,0,800,600);
-  background(255,255,255);
+  image(TeaPzzl,0,0,800,600);
+  
   
   
   
@@ -1371,5 +1371,513 @@ function reward()
     rect(475,15,100,45);
     fill(0,0,0);
     text("X",520,45);
+  }
+}
+
+
+function drawCanvasButtons()
+{
+  if (stateOfCircleOne == 1)
+  {
+    moveCircleOneX = 50;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+  }
+  else if (stateOfCircleOne == 2)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+
+    moveCircleOneX = moveCircleOneX + 62;
+
+    if (moveCircleOneX > 112)
+    {
+      moveCircleOneX = 112;
+      stateOfCircleOne = 3;
+    }
+  }
+  else if (stateOfCircleOne == 3)
+  {
+    moveCircleOneX = 112;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50); 
+  }
+
+  if (stateOfCircleTwo == 1)
+  {
+    moveCircleTwoX = 50;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+  }
+  else if (stateOfCircleTwo == 2)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+
+    moveCircleTwoX = moveCircleTwoX + 62;
+
+    if (moveCircleTwoX > 112)
+    {
+      moveCircleTwoX = 112;
+      stateOfCircleTwo = 3;
+    }
+  }
+  else if (stateOfCircleTwo == 3)
+  {
+    moveCircleTwoX = 112;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50); 
+  }
+
+  if (stateOfCircleThree == 1)
+  {
+    moveCircleThreeX = 50;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+  }
+  else if (stateOfCircleThree == 2)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+
+    moveCircleThreeX = moveCircleThreeX + 62;
+
+    if (moveCircleThreeX > 112)
+    {
+      moveCircleThreeX = 112;
+      stateOfCircleThree = 3;
+    }
+  }
+  else if (stateOfCircleThree == 3)
+  {
+    moveCircleThreeX = 112;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50); 
+  }
+
+  if (stateOfCircleOne == 4)
+  {
+    moveCircleOneX = 50;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+  }
+  else if (stateOfCircleOne == 5)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+
+    moveCircleOneX = moveCircleOneX + 162;
+
+    if (moveCircleOneX > 212)
+    {
+      moveCircleOneX = 212;
+      stateOfCircleOne = 6;
+    }
+  }
+  else if (stateOfCircleOne == 6)
+  {
+    moveCircleOneX = 212;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50); 
+  }
+
+  if (stateOfCircleTwo == 4)
+  {
+    moveCircleTwoX = 50;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+  }
+  else if (stateOfCircleTwo == 5)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+
+    moveCircleTwoX = moveCircleTwoX + 162;
+
+    if (moveCircleTwoX > 212)
+    {
+      moveCircleTwoX = 212;
+      stateOfCircleTwo = 6;
+    }
+  }
+  else if (stateOfCircleTwo == 6)
+  {
+    moveCircleTwoX = 212;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50); 
+  }
+
+  if (stateOfCircleThree == 4)
+  {
+    moveCircleThreeX = 50;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+  }
+  else if (stateOfCircleThree == 5)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+
+    moveCircleThreeX = moveCircleThreeX + 162;
+
+    if (moveCircleThreeX > 212)
+    {
+      moveCircleThreeX = 212;
+      stateOfCircleThree = 6;
+    }
+  }
+  else if (stateOfCircleThree == 6)
+  {
+    moveCircleThreeX = 212;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50); 
+  }
+
+  if (stateOfCircleOne == 7)
+  {
+    moveCircleOneX = 50;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+  }
+  else if (stateOfCircleOne == 8)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+
+    moveCircleOneX = moveCircleOneX + 262;
+
+    if (moveCircleOneX > 312)
+    {
+      moveCircleOneX = 312;
+      stateOfCircleOne = 9;
+    }
+  }
+  else if (stateOfCircleOne == 9)
+  {
+    moveCircleOneX = 312;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50); 
+  }
+
+  if (stateOfCircleTwo == 7)
+  {
+    moveCircleTwoX = 50;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+  }
+  else if (stateOfCircleTwo == 8)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+
+    moveCircleTwoX = moveCircleTwoX + 262;
+
+    if (moveCircleTwoX > 312)
+    {
+      moveCircleTwoX = 312;
+      stateOfCircleTwo = 9;
+    }
+  }
+  else if (stateOfCircleTwo == 9)
+  {
+    moveCircleTwoX = 312;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50); 
+  }
+
+  if (stateOfCircleThree == 7)
+  {
+    moveCircleThreeX = 50;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+  }
+  else if (stateOfCircleThree == 8)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+
+    moveCircleThreeX = moveCircleThreeX + 262;
+
+    if (moveCircleThreeX > 312)
+    {
+      moveCircleThreeX = 312;
+      stateOfCircleThree = 9;
+    }
+  }
+  else if (stateOfCircleThree == 9)
+  {
+    moveCircleThreeX = 312;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50); 
+  }
+
+  if (stateOfCircleOne == 10)
+  {
+    moveCircleOneX = 50;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+  }
+  else if (stateOfCircleOne == 11)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+
+    moveCircleOneX = moveCircleOneX + 362;
+
+    if (moveCircleOneX > 412)
+    {
+      moveCircleOneX = 412;
+      stateOfCircleOne = 12;
+    }
+  }
+  else if (stateOfCircleOne == 12)
+  {
+    moveCircleOneX = 412;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50); 
+  }
+
+  if (stateOfCircleTwo == 10)
+  {
+    moveCircleTwoX = 50;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+  }
+  else if (stateOfCircleTwo == 11)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+
+    moveCircleTwoX = moveCircleTwoX + 362;
+
+    if (moveCircleTwoX > 412)
+    {
+      moveCircleTwoX = 412;
+      stateOfCircleTwo = 12;
+    }
+  }
+  else if (stateOfCircleTwo == 12)
+  {
+    moveCircleTwoX = 412;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50); 
+  }
+
+  if (stateOfCircleThree == 10)
+  {
+    moveCircleThreeX = 50;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+  }
+  else if (stateOfCircleThree == 11)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+
+    moveCircleThreeX = moveCircleThreeX + 362;
+
+    if (moveCircleThreeX > 412)
+    {
+      moveCircleThreeX = 412;
+      stateOfCircleThree = 12;
+    }
+  }
+  else if (stateOfCircleThree == 12)
+  {
+    moveCircleThreeX = 412;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50); 
+  }
+
+  if (stateOfCircleOne == 13)
+  {
+    moveCircleOneX = 50;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+  }
+  else if (stateOfCircleOne == 14)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+
+    moveCircleOneX = moveCircleOneX + 462;
+
+    if (moveCircleOneX > 512)
+    {
+      moveCircleOneX = 512;
+      stateOfCircleOne = 15;
+    }
+  }
+  else if (stateOfCircleOne == 15)
+  {
+    moveCircleOneX = 512;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50); 
+  }
+
+  if (stateOfCircleTwo == 13)
+  {
+    moveCircleTwoX = 50;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+  }
+  else if (stateOfCircleTwo == 14)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+
+    moveCircleTwoX = moveCircleTwoX + 462;
+
+    if (moveCircleTwoX > 512)
+    {
+      moveCircleTwoX = 512;
+      stateOfCircleTwo = 15;
+    }
+  }
+  else if (stateOfCircleTwo == 15)
+  {
+    moveCircleTwoX = 512;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50); 
+  }
+
+  if (stateOfCircleThree == 13)
+  {
+    moveCircleThreeX = 50;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+  }
+  else if (stateOfCircleThree == 14)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+
+    moveCircleThreeX = moveCircleThreeX + 462;
+
+    if (moveCircleThreeX > 512)
+    {
+      moveCircleThreeX = 512;
+      stateOfCircleThree = 15;
+    }
+  }
+  else if (stateOfCircleThree == 15)
+  {
+    moveCircleThreeX = 512;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50); 
+  }
+
+  if (stateOfCircleOne == 16)
+  {
+    moveCircleOneX = 50;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+  }
+  else if (stateOfCircleOne == 17)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+
+    moveCircleOneX = moveCircleOneX + 562;
+
+    if (moveCircleOneX > 612)
+    {
+      moveCircleOneX = 612;
+      stateOfCircleOne = 18;
+    }
+  }
+  else if (stateOfCircleOne == 18)
+  {
+    moveCircleOneX = 612;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50); 
+  }
+
+  if (stateOfCircleTwo == 16)
+  {
+    moveCircleTwoX = 50;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+  }
+  else if (stateOfCircleTwo == 17)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+
+    moveCircleTwoX = moveCircleTwoX + 562;
+
+    if (moveCircleTwoX > 612)
+    {
+      moveCircleTwoX = 612;
+      stateOfCircleTwo = 18;
+    }
+  }
+  else if (stateOfCircleTwo == 18)
+  {
+    moveCircleTwoX = 612;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50); 
+  }
+
+  if (stateOfCircleThree == 16)
+  {
+    moveCircleThreeX = 50;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+  }
+  else if (stateOfCircleThree == 17)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+
+    moveCircleThreeX = moveCircleThreeX + 562;
+
+    if (moveCircleThreeX > 612)
+    {
+      moveCircleThreeX = 612;
+      stateOfCircleThree = 18;
+    }
+  }
+  else if (stateOfCircleThree == 18)
+  {
+    moveCircleThreeX = 612;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50); 
   }
 }
