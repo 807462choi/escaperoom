@@ -53,6 +53,7 @@ var goldsizex = 150;
 var goldsizey = 150;
 var goldatinv = 0;
 
+var drawCanvasButtons;
 
 canvas = 0;
 
@@ -138,20 +139,43 @@ function preload()
   Guitar = loadImage('https://dl.dropboxusercontent.com/s/pjjc43k7ckdo88d/Close%20up%20of%20the%20guitar.png');
   GuitarF = loadImage('https://dl.dropboxusercontent.com/s/ltdc5r71s3lcyhw/Fretboard.jpg');
   PuzzleS = loadImage('https://dl.dropboxusercontent.com/s/xmxcjqz8slm4a5m/Puzzle%20sign.png');
-    
+
+  magnifier1 = loadImage('https://dl.dropboxusercontent.com/s/vhm0lyt68h2a5x1/magnifier-multimedia-search-zoom-cursor-512.png'); 
   
+  ScrollDesign = loadImage('https://dl.dropboxusercontent.com/s/rhku9wuf76euff1/kakejiku1.jpg')
+  
+  TeaPzzl = loadImage('https://dl.dropboxusercontent.com/s/w3trbm8ujdepm2d/TeaPzzl.jpg')
+  
+
   //MUSIC
   IntroMus = loadSound('https://dl.dropboxusercontent.com/s/ye7qx0kuqicr8sm/Intro%20Music.mp3');
-  
+
   PrisonMus = loadSound('https://dl.dropboxusercontent.com/s/ujdo6pmvknf04of/Prison.mp3');
-  
+
   TeaRMus = loadSound("https://dl.dropboxusercontent.com/s/b46lq79zxcgsly2/Tea%20Room.mp3");
-  
+
   //Sound FX
   RockShamble = loadSound("https://dl.dropboxusercontent.com/s/yryang0hctpt9dk/Falling%20Rock%20Sound%20Effect.mp3");
+
+  Clank = loadSound("https://dl.dropboxusercontent.com/s/x82zsucm1ecva79/Cartoon%20Sound%20Effect%20-%20Metal%20Clank%20silence.mp3");
   
-  Clank = loadSound("https://dl.dropboxusercontent.com/s/xxpr5vgzlkma2rt/Cartoon%20Sound%20Effect%20-%20Metal%20Clank.mp3");
+  WoodD = loadSound("https://dl.dropboxusercontent.com/s/bila3fo9vzzhxh2/Jail%20Metal%20Door%20Sound%20Effect.mp3");
   
+  SlideD = loadSound("https://dl.dropboxusercontent.com/s/fj91nd6884n1cxs/Open%20Sliding%20Door%20SOUND%20Effect.mp3");
+  
+
+  SDPR1 = loadSound("https://dl.dropboxusercontent.com/s/nvkko4uo5gr1ct8/Slide%20%2B%20Prison.mp3");
+    
+  Slide2D = loadSound("https://dl.dropboxusercontent.com/s/fj91nd6884n1cxs/Open%20Sliding%20Door%20SOUND%20Effect.mp3");
+  
+  Slide3D = loadSound("https://dl.dropboxusercontent.com/s/fj91nd6884n1cxs/Open%20Sliding%20Door%20SOUND%20Effect.mp3");
+  
+  Paper1 = loadSound("https://dl.dropboxusercontent.com/s/4glx0uezmsxbedo/Paper%20Flutter%20Sound%20Effect.mp3");
+  
+  WoodH = loadSound("https://dl.dropboxusercontent.com/s/0ggfl3h0wdlf1kv/Wood%20Hit%20SOUND%20Effect.mp3");
+  
+  WoodH1 = loadSound("https://dl.dropboxusercontent.com/s/0ggfl3h0wdlf1kv/Wood%20Hit%20SOUND%20Effect.mp3");
+
   
 }
 
@@ -211,9 +235,21 @@ function draw()
   {
     c13();
   }
-  else if (canvas == 14)
+  else if (canvas == 14) //scroll drawing close
+  {
+    c14();
+  }
+  else if (canvas == 15)
     {
-      c14();
+      c15();
+    }
+  else if (canvas == 16)
+    {
+      c16();
+    }
+  else if (canvs == 17)
+    {
+      c17();
     }
   else
   {
@@ -232,17 +268,15 @@ function intro()
     IntroMus.play();
   }
 
-  
-  
   fill(255,0,0);
   rect(280,300,200,50);
-  
+
   stroke(255,0,0);
   fill(0,0,0);
   textSize(50);
   strokeWeight(5);
   text('House of Ashikaga',170,250);
- 
+
   fill(0,0,0);
   textSize(12);
   strokeWeight(1);
@@ -279,8 +313,8 @@ function c1()
 
   fill(255,0,0);
   textSize(12);
-  
-  
+
+
   var cursorimage = "arrow";
 
   //puzzle
@@ -295,7 +329,7 @@ function c1()
       canvas = 6;
     }
   }
-  
+
   //Exit
   if (mouseX >= 380 && mouseX <= 520 && mouseY >= 200 && mouseY <= 380 && goldatinv == 1)
   {
@@ -307,10 +341,11 @@ function c1()
     {
       goldatinv = 0;
       canvas = 3;
+      WoodD.play();
     }
   }
 
-  
+
   if (cursorimage == "arrow")
   {
     cursor(ARROW); 
@@ -321,7 +356,7 @@ function c1()
   }
 
 
-  
+
   itemGrid();
 
 }
@@ -330,29 +365,29 @@ function c9()
 {
   image(Prison,0,-20,800,620);
   image(PrSgn,0,0,800,600);
-  
+
   textSize(30);
   text("Continue",330,500);
-  
+
   if (mouseX >= 330 && mouseX <= 450 && mouseY >= 480 && mouseY <= 600)
+  {
+    cursor(HAND);
+    if (mouseIsPressed)
     {
-      cursor(HAND);
-      if (mouseIsPressed)
-      {
-        canvas = 1;
-      }
+      canvas = 1;
     }
+  }
   else
-    {
-      cursor(ARROW);
-    }
+  {
+    cursor(ARROW);
+  }
 }
 
 
 
 function c6() // OUTER GINSHAW
 {
- image(OuterGinshaw,0,0,800,600);
+  image(OuterGinshaw,0,0,800,600);
   if (mouseX >= 100 && mouseX <= 700 && mouseY >= 50 && mouseY <= 500)
   {
     cursor(HAND);
@@ -366,7 +401,7 @@ function c6() // OUTER GINSHAW
   {
     cursor(ARROW);
   }
-   
+
 }
 
 function c2() //puzzle
@@ -431,12 +466,13 @@ function c3() // outside prison
     cursor(HAND);
     textSize(20);
     fill(0,0,0);
-    //image(TeSgn,400,150,250,187);
     if (mouseIsPressed)
     {
       canvas = 4;
       cursor(ARROW);
+      SlideD.play();
       PrisonMus.stop();
+      SDPR1.stop();
     }
   }
   else
@@ -454,29 +490,26 @@ function c4() // tea room
   image(TeaR,0,0,800,600);
 
   var cursorimage = "arrow";
-  
-  
+
+
   if (TeaRMus.isPlaying() == false)
   {
     TeaRMus.play();
   }
-  
+
   if (mouseX >= 0 && mouseX <= 70 && mouseY >= 150 && mouseY <= 510)
   {
-    cursorimage = "hand";
-    textSize(20);
-    fill(0,0,0);
+    cursorimage = "magnifier1";
     image(HaSgn,160,80,500,385);
     if (mouseIsPressed)
     {
+      TeaRMus.stop();
       canvas = 3;
+      SDPR1.play();
     }
   }
-  else
-  {
-    textSize(12);
-  }
-  
+
+
   if (mouseX >= 750 && mouseX <= 800 && mouseY >= 50 && mouseY <= 550)
   {
     cursorimage = "hand";
@@ -486,15 +519,15 @@ function c4() // tea room
     if (mouseIsPressed)
     {
       cursorimage = "arrow";
-      TeaRMus.stop();
       canvas = 5;
+      Slide2D.play();
     }
   }
   else
   {
     textSize(12);
   }
-  
+
   if (mouseX >= 600 && mouseX <= 660 && mouseY >= 400 && mouseY <= 450)
   {
     cursorimage = "hand";
@@ -503,6 +536,7 @@ function c4() // tea room
     text('Evidence...?',350,250);
     if (mouseIsPressed)
     {
+      WoodH.play();
       cursorimage = "arrow";
       canvas = 7;
     }
@@ -511,15 +545,31 @@ function c4() // tea room
   {
     textSize(12);
   }
-  
+
   fill(0,0,0);
   textSize(12);
   
+  if (mouseX >= 250 && mouseX <= 300 && mouseY >= 40 && mouseY <= 285)
+    {
+      cursorimage = "hand";
+      if (mouseIsPressed)
+        {
+          cursorimage = "arrow";
+          canvas = 14;
+          WoodH1.play();
+        }
+    }
   
-  rect(350,400,100,200);
-  
-  
-   
+  if (mouseX >= 350 && mouseX <= 450 && mouseY >= 400 && mouseY <= 500)
+    {
+      cursorimage = "hand";
+      if (mouseIsPressed)
+        {
+          canvas = 12;
+        }
+    }
+
+
   if (cursorimage == "arrow")
   {
     cursor(ARROW); 
@@ -530,6 +580,48 @@ function c4() // tea room
   }
 
   itemGrid();
+}
+
+function c12() // tea pot challenge
+{
+  image(TeaPzzl,0,0,800,600);
+  
+  
+  
+  
+  fill(255,0,0);
+  rect(650,0,149,50);
+  
+}
+
+function c14() // closer up scroll draw
+{
+  image(ScrollDesign,270,-50,300,709);
+  
+  fill(255,0,0);
+  rect(650,0,149,50);
+  fill(0,0,0);
+  text('X',725,35);
+  
+  if (mouseX >= 650 && mouseX <= 799 && mouseY >= 0 && mouseY <= 50)
+    {
+      cursor(HAND);
+    
+      fill(155,0,0);
+      rect(650,0,149,50);
+      fill(0,0,0);
+      text('X',725,35);
+      if (mouseIsPressed)
+        {
+          canvas = 4;
+        } 
+    }
+  else 
+    {
+      cursor(ARROW);
+    }
+
+  
 }
 
 function c7() //scroll
@@ -547,13 +639,18 @@ function c7() //scroll
     cursorimage = "hand";
     if (mouseIsPressed)
     {
+      Paper1.play();
       cursorimage = "arrow";
       canvas = 8;
     }
   }
-  
+
   if (mouseX >= 650 && mouseX <= 800 && mouseY >= 0 && mouseY <= 50)
   {
+    
+    fill(155,0,0);
+    rect(650,0,149,50);
+    text('Back',700,35);
     cursorimage = "hand";
     if(mouseIsPressed)
     {
@@ -561,7 +658,7 @@ function c7() //scroll
       canvas = 4;
     }
   }
-  
+
   if (cursorimage == "arrow")
   {
     cursor(ARROW); 
@@ -570,7 +667,7 @@ function c7() //scroll
   {
     cursor(HAND);
   }
-  
+
 }
 
 function c8() //read scroll
@@ -578,12 +675,16 @@ function c8() //read scroll
   image(Scrl,0,0,800,600);
   fill(255,0,0);
   rect(650,0,149,50);
-  fill(0,0,0);
+  fill(0,0,0);0
   textSize(20);
-  text('Back',725,35);
-  
+  text('Back',700,35);
+
   if (mouseX >= 650 && mouseX <= 800 && mouseY >= 0 && mouseY <= 50)
   {
+   
+    fill(155,0,0);
+    rect(650,0,149,50);
+    text('Back',700,35);
     cursor(HAND);
     if(mouseIsPressed)
     {
@@ -596,49 +697,52 @@ function c8() //read scroll
   }
 }
 
-function c14() //tea puzzle
+function c12() //tea puzzle
 {
   background(255,255,255);
-  
-  
-  
-  
+
+
+
+
 }
 
 
 
 function c5() //Art room
 {
+  
   image(Art,0,-50,800,600);
   var cursorimage = "arrow";
-  
+
   if (mouseX >= 50 && mouseX <= 160 && mouseY >= 350 && mouseY <= 500)
   {
     cursorimage = "hand";
     if (mouseIsPressed)
-      {
-        cursorimage = "arrow";
-        canvas = 10;
-      }
-  }
-  
-  rect(190,160,190,240);
-
-  
-  
-  if (mouseX >= 460 && mouseX <= 560 && mouseY >= 160 && mouseY <= 400)
     {
-      cursorimage = "hand";
-      image(TeSgn,250,150,300,230);
-      if (mouseIsPressed)
-        {
-          cursorimage = "arrow";
-          canvas = 4;
-        }
-      
+      cursorimage = "arrow";
+      canvas = 10;
     }
+  }
+
+  rect(190,160,190,240);
   
   
+  
+
+  if (mouseX >= 460 && mouseX <= 560 && mouseY >= 160 && mouseY <= 400)
+  {
+    cursorimage = "hand";
+    image(TeSgn,250,150,300,230);
+    if (mouseIsPressed)
+    {
+      cursorimage = "arrow";
+      canvas = 4;
+      Slide3D.play();
+    }
+
+  }
+
+
   if (cursorimage == "arrow")
   {
     cursor(ARROW); 
@@ -656,16 +760,16 @@ function c10() // guitar
 {
   image(Guitar,0,0,800,600);
   var cursorimage = "arrow";
-  
+
   if (mouseX >= 250 && mouseX <= 450 && mouseY >= 150 && mouseY <= 520)
+  {
+    cursorimage = "hand";
+    if (mouseIsPressed)
     {
-      cursorimage = "hand";
-      if (mouseIsPressed)
-        {
-          canvas = 11; 
-        }
+      canvas = 11; 
     }
-  
+  }
+
   if (cursorimage == "arrow")
   {
     cursor(ARROW); 
@@ -685,17 +789,17 @@ function c11()
   rect(660,0,120,50);
   fill(0,0,0);
   text('X',715,30);
-  
+
   if (mouseX >= 660 && mouseX <= 780 && mouseY >= 0 && mouseY <= 120)
+  {
+    cursorimage = "hand";
+    if (mouseIsPressed)
     {
-      cursorimage = "hand";
-      if (mouseIsPressed)
-        {
-          cursorimage = "arrow";
-          canvas = 5;
-        }
+      cursorimage = "arrow";
+      canvas = 5;
     }
-  
+  }
+
   if (cursorimage == "arrow")
   {
     cursor(ARROW); 
@@ -704,7 +808,6 @@ function c11()
   {
     cursor(HAND);
   }
-  
 }
 
 
@@ -719,12 +822,12 @@ function itemGrid()
   rect(90,525,70,70);
   fill(125,125,125);
   rect(170,525,70,70);
-  
+
   if (goldatinv == 1)
   {
-  image(Gold,moveGoldx,moveGoldy,goldsizex,goldsizey); 
+    image(Gold,moveGoldx,moveGoldy,goldsizex,goldsizey); 
   }
-  
+
 }
 
 
@@ -1221,7 +1324,6 @@ function reward()
   if (lazy == 1)
   {
     //    GoldState = 0;
-
     text(circleGold,10,100);
     image(Gold,moveGoldx,moveGoldy,goldsizex,goldsizey); 
     if (circleGold < 75)
@@ -1234,7 +1336,7 @@ function reward()
         goldsizex = 50;
         goldsizey = 50;
         goldatinv = 1;
-        Clank.play();
+
       }
 
     }
@@ -1243,10 +1345,14 @@ function reward()
       cursor(ARROW);
     }
   }
-
+  
   if (goldatinv == 1)
   {
-    Clank.stop();
+    if (Clank.isPlaying() == false)
+    {
+      Clank.play();
+    }
+    
     fill(255,50,50);
     if (mouseX >= 475 && mouseX <= 575 && mouseY >= 15 && mouseY <= 60)
     {
@@ -1263,8 +1369,515 @@ function reward()
     }
 
     rect(475,15,100,45);
-
     fill(0,0,0);
     text("X",520,45);
+  }
+}
+
+
+function drawCanvasButtons()
+{
+  if (stateOfCircleOne == 1)
+  {
+    moveCircleOneX = 50;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+  }
+  else if (stateOfCircleOne == 2)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+
+    moveCircleOneX = moveCircleOneX + 62;
+
+    if (moveCircleOneX > 112)
+    {
+      moveCircleOneX = 112;
+      stateOfCircleOne = 3;
+    }
+  }
+  else if (stateOfCircleOne == 3)
+  {
+    moveCircleOneX = 112;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50); 
+  }
+
+  if (stateOfCircleTwo == 1)
+  {
+    moveCircleTwoX = 50;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+  }
+  else if (stateOfCircleTwo == 2)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+
+    moveCircleTwoX = moveCircleTwoX + 62;
+
+    if (moveCircleTwoX > 112)
+    {
+      moveCircleTwoX = 112;
+      stateOfCircleTwo = 3;
+    }
+  }
+  else if (stateOfCircleTwo == 3)
+  {
+    moveCircleTwoX = 112;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50); 
+  }
+
+  if (stateOfCircleThree == 1)
+  {
+    moveCircleThreeX = 50;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+  }
+  else if (stateOfCircleThree == 2)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+
+    moveCircleThreeX = moveCircleThreeX + 62;
+
+    if (moveCircleThreeX > 112)
+    {
+      moveCircleThreeX = 112;
+      stateOfCircleThree = 3;
+    }
+  }
+  else if (stateOfCircleThree == 3)
+  {
+    moveCircleThreeX = 112;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50); 
+  }
+
+  if (stateOfCircleOne == 4)
+  {
+    moveCircleOneX = 50;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+  }
+  else if (stateOfCircleOne == 5)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+
+    moveCircleOneX = moveCircleOneX + 162;
+
+    if (moveCircleOneX > 212)
+    {
+      moveCircleOneX = 212;
+      stateOfCircleOne = 6;
+    }
+  }
+  else if (stateOfCircleOne == 6)
+  {
+    moveCircleOneX = 212;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50); 
+  }
+
+  if (stateOfCircleTwo == 4)
+  {
+    moveCircleTwoX = 50;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+  }
+  else if (stateOfCircleTwo == 5)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+
+    moveCircleTwoX = moveCircleTwoX + 162;
+
+    if (moveCircleTwoX > 212)
+    {
+      moveCircleTwoX = 212;
+      stateOfCircleTwo = 6;
+    }
+  }
+  else if (stateOfCircleTwo == 6)
+  {
+    moveCircleTwoX = 212;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50); 
+  }
+
+  if (stateOfCircleThree == 4)
+  {
+    moveCircleThreeX = 50;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+  }
+  else if (stateOfCircleThree == 5)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+
+    moveCircleThreeX = moveCircleThreeX + 162;
+
+    if (moveCircleThreeX > 212)
+    {
+      moveCircleThreeX = 212;
+      stateOfCircleThree = 6;
+    }
+  }
+  else if (stateOfCircleThree == 6)
+  {
+    moveCircleThreeX = 212;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50); 
+  }
+
+  if (stateOfCircleOne == 7)
+  {
+    moveCircleOneX = 50;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+  }
+  else if (stateOfCircleOne == 8)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+
+    moveCircleOneX = moveCircleOneX + 262;
+
+    if (moveCircleOneX > 312)
+    {
+      moveCircleOneX = 312;
+      stateOfCircleOne = 9;
+    }
+  }
+  else if (stateOfCircleOne == 9)
+  {
+    moveCircleOneX = 312;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50); 
+  }
+
+  if (stateOfCircleTwo == 7)
+  {
+    moveCircleTwoX = 50;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+  }
+  else if (stateOfCircleTwo == 8)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+
+    moveCircleTwoX = moveCircleTwoX + 262;
+
+    if (moveCircleTwoX > 312)
+    {
+      moveCircleTwoX = 312;
+      stateOfCircleTwo = 9;
+    }
+  }
+  else if (stateOfCircleTwo == 9)
+  {
+    moveCircleTwoX = 312;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50); 
+  }
+
+  if (stateOfCircleThree == 7)
+  {
+    moveCircleThreeX = 50;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+  }
+  else if (stateOfCircleThree == 8)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+
+    moveCircleThreeX = moveCircleThreeX + 262;
+
+    if (moveCircleThreeX > 312)
+    {
+      moveCircleThreeX = 312;
+      stateOfCircleThree = 9;
+    }
+  }
+  else if (stateOfCircleThree == 9)
+  {
+    moveCircleThreeX = 312;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50); 
+  }
+
+  if (stateOfCircleOne == 10)
+  {
+    moveCircleOneX = 50;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+  }
+  else if (stateOfCircleOne == 11)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+
+    moveCircleOneX = moveCircleOneX + 362;
+
+    if (moveCircleOneX > 412)
+    {
+      moveCircleOneX = 412;
+      stateOfCircleOne = 12;
+    }
+  }
+  else if (stateOfCircleOne == 12)
+  {
+    moveCircleOneX = 412;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50); 
+  }
+
+  if (stateOfCircleTwo == 10)
+  {
+    moveCircleTwoX = 50;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+  }
+  else if (stateOfCircleTwo == 11)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+
+    moveCircleTwoX = moveCircleTwoX + 362;
+
+    if (moveCircleTwoX > 412)
+    {
+      moveCircleTwoX = 412;
+      stateOfCircleTwo = 12;
+    }
+  }
+  else if (stateOfCircleTwo == 12)
+  {
+    moveCircleTwoX = 412;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50); 
+  }
+
+  if (stateOfCircleThree == 10)
+  {
+    moveCircleThreeX = 50;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+  }
+  else if (stateOfCircleThree == 11)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+
+    moveCircleThreeX = moveCircleThreeX + 362;
+
+    if (moveCircleThreeX > 412)
+    {
+      moveCircleThreeX = 412;
+      stateOfCircleThree = 12;
+    }
+  }
+  else if (stateOfCircleThree == 12)
+  {
+    moveCircleThreeX = 412;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50); 
+  }
+
+  if (stateOfCircleOne == 13)
+  {
+    moveCircleOneX = 50;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+  }
+  else if (stateOfCircleOne == 14)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+
+    moveCircleOneX = moveCircleOneX + 462;
+
+    if (moveCircleOneX > 512)
+    {
+      moveCircleOneX = 512;
+      stateOfCircleOne = 15;
+    }
+  }
+  else if (stateOfCircleOne == 15)
+  {
+    moveCircleOneX = 512;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50); 
+  }
+
+  if (stateOfCircleTwo == 13)
+  {
+    moveCircleTwoX = 50;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+  }
+  else if (stateOfCircleTwo == 14)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+
+    moveCircleTwoX = moveCircleTwoX + 462;
+
+    if (moveCircleTwoX > 512)
+    {
+      moveCircleTwoX = 512;
+      stateOfCircleTwo = 15;
+    }
+  }
+  else if (stateOfCircleTwo == 15)
+  {
+    moveCircleTwoX = 512;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50); 
+  }
+
+  if (stateOfCircleThree == 13)
+  {
+    moveCircleThreeX = 50;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+  }
+  else if (stateOfCircleThree == 14)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+
+    moveCircleThreeX = moveCircleThreeX + 462;
+
+    if (moveCircleThreeX > 512)
+    {
+      moveCircleThreeX = 512;
+      stateOfCircleThree = 15;
+    }
+  }
+  else if (stateOfCircleThree == 15)
+  {
+    moveCircleThreeX = 512;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50); 
+  }
+
+  if (stateOfCircleOne == 16)
+  {
+    moveCircleOneX = 50;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+  }
+  else if (stateOfCircleOne == 17)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50);
+
+    moveCircleOneX = moveCircleOneX + 562;
+
+    if (moveCircleOneX > 612)
+    {
+      moveCircleOneX = 612;
+      stateOfCircleOne = 18;
+    }
+  }
+  else if (stateOfCircleOne == 18)
+  {
+    moveCircleOneX = 612;
+    moveCircleOneY = 130;
+    fill(0,0,0);
+    ellipse(moveCircleOneX,moveCircleOneY,50,50); 
+  }
+
+  if (stateOfCircleTwo == 16)
+  {
+    moveCircleTwoX = 50;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+  }
+  else if (stateOfCircleTwo == 17)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50);
+
+    moveCircleTwoX = moveCircleTwoX + 562;
+
+    if (moveCircleTwoX > 612)
+    {
+      moveCircleTwoX = 612;
+      stateOfCircleTwo = 18;
+    }
+  }
+  else if (stateOfCircleTwo == 18)
+  {
+    moveCircleTwoX = 612;
+    moveCircleTwoY = 280;
+    fill(0,0,0);
+    ellipse(moveCircleTwoX,moveCircleTwoY,50,50); 
+  }
+
+  if (stateOfCircleThree == 16)
+  {
+    moveCircleThreeX = 50;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+  }
+  else if (stateOfCircleThree == 17)
+  {
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50);
+
+    moveCircleThreeX = moveCircleThreeX + 562;
+
+    if (moveCircleThreeX > 612)
+    {
+      moveCircleThreeX = 612;
+      stateOfCircleThree = 18;
+    }
+  }
+  else if (stateOfCircleThree == 18)
+  {
+    moveCircleThreeX = 612;
+    moveCircleThreeY = 430;
+    fill(0,0,0);
+    ellipse(moveCircleThreeX,moveCircleThreeY,50,50); 
   }
 }
