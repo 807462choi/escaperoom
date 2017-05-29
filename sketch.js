@@ -141,12 +141,15 @@ function preload()
   magnifier1 = loadImage('https://dl.dropboxusercontent.com/s/vhm0lyt68h2a5x1/magnifier-multimedia-search-zoom-cursor-512.png'); 
   ScrollDesign = loadImage('https://dl.dropboxusercontent.com/s/rhku9wuf76euff1/kakejiku1.jpg')
   TeaPzzl = loadImage('https://dl.dropboxusercontent.com/s/rspt86wc7htakjl/TeaPzzl.jpg')
+  TeaLeaves = loadImage('https://dl.dropboxusercontent.com/s/bctzn9617xh0obc/15443686-closeup-of-a-pile-of-dry-green-tea-leaves-with-bits-of-dry-coconut-ready-to-infuse-Stock-Photo.png')  
+  
+  
+  
   
   //MUSIC
   IntroMus = loadSound('https://dl.dropboxusercontent.com/s/ye7qx0kuqicr8sm/Intro%20Music.mp3');
   PrisonMus = loadSound('https://dl.dropboxusercontent.com/s/ujdo6pmvknf04of/Prison.mp3');
   TeaRMus = loadSound("https://dl.dropboxusercontent.com/s/b46lq79zxcgsly2/Tea%20Room.mp3");
-  
   //Sound FX
   RockShamble = loadSound("https://dl.dropboxusercontent.com/s/yryang0hctpt9dk/Falling%20Rock%20Sound%20Effect.mp3");
   Clank = loadSound("https://dl.dropboxusercontent.com/s/x82zsucm1ecva79/Cartoon%20Sound%20Effect%20-%20Metal%20Clank%20silence.mp3");
@@ -557,7 +560,7 @@ function c4() // tea room
 function c12() // tea pot challenge
 {
   image(TeaPzzl,0,0,800,600);
-  
+  image(TeaLeaves,490,450,50,50);
   var cursorimage = "arrow";
   
   fill(255,0,0);
