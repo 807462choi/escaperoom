@@ -633,6 +633,7 @@ function c7() //scroll
     {
       cursorimage = "arrow";
       canvas = 8;
+      Paper1.play();
     }
   }
   
@@ -668,6 +669,9 @@ function c8() //read scroll
   
   if (mouseX >= 650 && mouseX <= 800 && mouseY >= 0 && mouseY <= 50)
   {
+    fill(155,0,0);
+    rect(650,0,149,50);
+    text('Back',700,35);
     cursor(HAND);
     if(mouseIsPressed)
     {
