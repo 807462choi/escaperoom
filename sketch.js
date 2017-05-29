@@ -568,9 +568,9 @@ function c12() // tea pot challenge
   text('X',725,35);
   
   
-  ellipse(100,500,100,100);//hot water
-  ellipse(300,500,100,100);//water
-  ellipse(200,500,100,100);//Tea leaves
+  ellipse(100,400,300,300);//hot water
+  ellipse(400,430,200,200);//tea
+  ellipse(200,500,100,100);//water
   
   if (mouseX >= 650 && mouseX <= 799 && mouseY >= 0 && mouseY <= 50)
   {
@@ -1343,7 +1343,7 @@ function reward()
         canvas = 1;
       }
     }
-    else
+    elseh
     {
       cursor(ARROW);
     }
