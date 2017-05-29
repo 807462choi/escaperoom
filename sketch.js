@@ -144,9 +144,7 @@ function preload()
   
   //MUSIC
   IntroMus = loadSound('https://dl.dropboxusercontent.com/s/ye7qx0kuqicr8sm/Intro%20Music.mp3');
-  
   PrisonMus = loadSound('https://dl.dropboxusercontent.com/s/ujdo6pmvknf04of/Prison.mp3');
-  
   TeaRMus = loadSound("https://dl.dropboxusercontent.com/s/b46lq79zxcgsly2/Tea%20Room.mp3");
   
   //Sound FX
@@ -568,9 +566,9 @@ function c12() // tea pot challenge
   text('X',725,35);
   
   
-  //ellipse(100,500,300,300);//hot water
-  //ellipse(300,500,200,100);//water
-  //ellipse(200,500,100,100);//Tea leaves
+  ellipse(100,500,300,300);//hot water
+  ellipse(300,500,200,100);//water
+  ellipse(200,500,100,100);//Tea leaves
   
   if (mouseX >= 650 && mouseX <= 799 && mouseY >= 0 && mouseY <= 50)
   {
@@ -1343,7 +1341,7 @@ function reward()
         canvas = 1;
       }
     }
-    elseh
+    else
     {
       cursor(ARROW);
     }
