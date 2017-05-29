@@ -572,6 +572,7 @@ function c12() // tea pot challenge
   ellipse(130,420,300,300);//hot water
   ellipse(345,395,150,150);//water
   ellipse(478,448,150,150);//Tea leaves
+  image(TeaLeaves,490,450,50,50);
   
   if (mouseX >= 650 && mouseX <= 799 && mouseY >= 0 && mouseY <= 50)
   {
@@ -589,7 +590,7 @@ function c12() // tea pot challenge
   {
     cursor(HAND);
   }
-  image(TeaLeaves,490,450,50,50);
+
   
 }
 }
