@@ -563,6 +563,7 @@ function c12() // tea pot challenge
   
   fill(255,0,0);
   rect(650,0,149,50);
+  fill(0,0,0);
   text('X',725,35);
   
   
