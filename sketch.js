@@ -149,10 +149,15 @@ function preload()
   
   //Sound FX
   RockShamble = loadSound("https://dl.dropboxusercontent.com/s/yryang0hctpt9dk/Falling%20Rock%20Sound%20Effect.mp3");
-  
-  Clank = loadSound("https://dl.dropboxusercontent.com/s/xxpr5vgzlkma2rt/Cartoon%20Sound%20Effect%20-%20Metal%20Clank.mp3");
-  
-  
+  Clank = loadSound("https://dl.dropboxusercontent.com/s/x82zsucm1ecva79/Cartoon%20Sound%20Effect%20-%20Metal%20Clank%20silence.mp3");
+  WoodD = loadSound("https://dl.dropboxusercontent.com/s/bila3fo9vzzhxh2/Jail%20Metal%20Door%20Sound%20Effect.mp3");
+  SlideD = loadSound("https://dl.dropboxusercontent.com/s/fj91nd6884n1cxs/Open%20Sliding%20Door%20SOUND%20Effect.mp3");
+  SDPR1 = loadSound("https://dl.dropboxusercontent.com/s/nvkko4uo5gr1ct8/Slide%20%2B%20Prison.mp3");
+  Slide2D = loadSound("https://dl.dropboxusercontent.com/s/fj91nd6884n1cxs/Open%20Sliding%20Door%20SOUND%20Effect.mp3");
+  Slide3D = loadSound("https://dl.dropboxusercontent.com/s/fj91nd6884n1cxs/Open%20Sliding%20Door%20SOUND%20Effect.mp3");
+  Paper1 = loadSound("https://dl.dropboxusercontent.com/s/4glx0uezmsxbedo/Paper%20Flutter%20Sound%20Effect.mp3");
+  WoodH = loadSound("https://dl.dropboxusercontent.com/s/0ggfl3h0wdlf1kv/Wood%20Hit%20SOUND%20Effect.mp3");
+  WoodH1 = loadSound("https://dl.dropboxusercontent.com/s/0ggfl3h0wdlf1kv/Wood%20Hit%20SOUND%20Effect.mp3");
 }
 
 
@@ -307,6 +312,7 @@ function c1()
     {
       goldatinv = 0;
       canvas = 3;
+      WoodD.play();
     }
   }
 
