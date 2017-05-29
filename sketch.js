@@ -584,8 +584,8 @@ function c4() // tea room
 
 function c12() // tea pot challenge
 {
-  image(TeaPzzl,0,0,800,600);
-  
+  //image(TeaPzzl,0,0,800,600);
+  background(255,255,255);
   
   
   
