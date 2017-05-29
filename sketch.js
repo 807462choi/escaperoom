@@ -58,7 +58,7 @@ canvas = 0;
 
 function setup()
 {
-  createCanvas(800,600);
+  createCanvas(700,600);
   triangleOrientation = 1;
   triangleOrientation2 = 2;
   triangleOrientation3 = 1;
@@ -115,14 +115,13 @@ function setup()
 
   moveGoldx = 220;
   moveGoldy = 150;
-  
-  canvas = intro;
 
 }
 
 function preload()
 {
   Gold = loadImage('https://dl.dropboxusercontent.com/s/x1mt1n2eqywabny/Coin2.png');  
+<<<<<<< HEAD
   IntroJ = loadImage('https://dl.dropboxusercontent.com/s/adi59zn0kxdwjsd/Japan%20Castle.jpg');
   Prison = loadImage('https://dl.dropboxusercontent.com/s/1y1652mm8hmweh9/Prison.png');
   PrisonO = loadImage('https://dl.dropboxusercontent.com/s/e3exhopjmrhy0x1/Outer%20Prison.png');
@@ -176,24 +175,28 @@ function preload()
   WoodH1 = loadSound("https://dl.dropboxusercontent.com/s/0ggfl3h0wdlf1kv/Wood%20Hit%20SOUND%20Effect.mp3");
 
   
+=======
+  IntroJ =  loadImage('https://dl.dropboxusercontent.com/s/adi59zn0kxdwjsd/Japan%20Castle.jpg');
+>>>>>>> parent of 9ce07f1... V. 2.3
 }
 
 
 function draw()
 {
 
-  if (canvas == 1) // Prison
+  if (canvas == 1)
   {
     c1();
   }
-  else if (canvas == 2) // puzzle
+  else if (canvas == 2)
   {
     c2();
   }
-  else if (canvas == 3) // outer prison
+  else if (canvas == 3)
   {
     c3();
   }
+<<<<<<< HEAD
   else if (canvas == 4)// tea
   {
     c4();
@@ -250,17 +253,20 @@ function draw()
     {
       c17();
     }
+=======
+>>>>>>> parent of 9ce07f1... V. 2.3
   else
   {
     intro();
   }
-
+  
 }
 
 function intro()
 {
 
   background(50,150,150);
+<<<<<<< HEAD
   image(IntroJ,0,-20,800,620);
   if (IntroMus.isPlaying() == false)
   {
@@ -315,19 +321,21 @@ function c1()
 
 
   var cursorimage = "arrow";
+=======
+  image(IntroJ,0,0,700,700);
+  
+  fill(255,0,0);
+  rect(250,300,200,50);
+  stroke(0,0,0);
+  text('START',250,250);
+  
+>>>>>>> parent of 9ce07f1... V. 2.3
 
-  //puzzle
-  if (mouseX >= 10 && mouseX <= 70 && mouseY >= 470 && mouseY <= 500) 
+  if(mouseIsPressed)
   {
-    cursorimage = "hand";
-    fill(255,255,255);
-    image(PuzzleS,150,70,500,375);
-    if (mouseIsPressed)
-    {
-      textSize(12);
-      canvas = 6;
-    }
+    canvas = 1;
   }
+<<<<<<< HEAD
 
   //Exit
   if (mouseX >= 380 && mouseX <= 520 && mouseY >= 200 && mouseY <= 380 && goldatinv == 1)
@@ -381,31 +389,32 @@ function c9()
     cursor(ARROW);
   }
 }
-
-
-
-function c6() // OUTER GINSHAW
-{
-  image(OuterGinshaw,0,0,800,600);
-  if (mouseX >= 100 && mouseX <= 700 && mouseY >= 50 && mouseY <= 500)
-  {
-    cursor(HAND);
-    if (mouseIsPressed)
-    {
-      RockShamble.play();
-      canvas = 2;
-    }
-  }
-  else 
-  {
-    cursor(ARROW);
-  }
-
+=======
 }
 
-function c2() //puzzle
+>>>>>>> parent of 9ce07f1... V. 2.3
+
+function c1()
 {
-  background(255,255,255);
+<<<<<<< HEAD
+  image(OuterGinshaw,0,0,800,600);
+  if (mouseX >= 100 && mouseX <= 700 && mouseY >= 50 && mouseY <= 500)
+=======
+  background(69,69,69);
+  if (mouseIsPressed)
+>>>>>>> parent of 9ce07f1... V. 2.3
+  {
+    canvas = 2;
+  }
+<<<<<<< HEAD
+
+=======
+>>>>>>> parent of 9ce07f1... V. 2.3
+}
+
+function c2()
+{
+  background(255,255,255);         
 
   //outline puzle 
   fill(204,102,0);
@@ -423,11 +432,13 @@ function c2() //puzzle
   }
   drawTriangle1();
 
+
   if (permenantLock2 == false)
   {
     moveTriangle2();
     changeTriangleOrientation2();
   }
+
   drawTriangle2();
 
   if (permenantLock3 == false)
@@ -452,6 +463,7 @@ function c2() //puzzle
   drawTriangle5();
   itemGrid();
   reward();
+<<<<<<< HEAD
   strokeWeight(1);
 }
 
@@ -577,10 +589,12 @@ function c4() // tea room
   {
     cursor(HAND);
   }
+=======
+>>>>>>> parent of 9ce07f1... V. 2.3
 
-  itemGrid();
 }
 
+<<<<<<< HEAD
 function c12() // tea pot challenge
 {
   //image(TeaPzzl,0,0,800,600);
@@ -811,15 +825,26 @@ function c11()
 
 
 
+=======
+function c3()
+{
+  background(12,123,254);
+  
+  
+  itemGrid();
+}
+
+>>>>>>> parent of 9ce07f1... V. 2.3
 function itemGrid()
 {
   fill(50,50,50);
-  rect(0,520,700,85);
+  rect(5,493,720,85);
   fill(125,125,125);
-  rect(10,525,70,70);
+  rect(20,500,70,70);
   fill(125,125,125);
-  rect(90,525,70,70);
+  rect(100,500,70,70);
   fill(125,125,125);
+<<<<<<< HEAD
   rect(170,525,70,70);
 
   if (goldatinv == 1)
@@ -827,6 +852,9 @@ function itemGrid()
     image(Gold,moveGoldx,moveGoldy,goldsizex,goldsizey); 
   }
 
+=======
+  rect(180,500,70,70);
+>>>>>>> parent of 9ce07f1... V. 2.3
 }
 
 
@@ -1124,6 +1152,8 @@ function changeTriangleOrientation5()
 
 }
 
+
+
 function mouseReleased()
 {
   if (lock)
@@ -1207,6 +1237,7 @@ function mouseReleased()
   {
     lockTriangleOrientation5 = false;
   }
+
 }
 
 function drawTriangle1()
@@ -1309,6 +1340,8 @@ function drawTriangle5()
   }
 }
 
+
+
 function maze()
 {
   stroke(0,0,0);
@@ -1323,6 +1356,12 @@ function reward()
   if (lazy == 1)
   {
     //    GoldState = 0;
+<<<<<<< HEAD
+=======
+    
+    
+    
+>>>>>>> parent of 9ce07f1... V. 2.3
     text(circleGold,10,100);
     image(Gold,moveGoldx,moveGoldy,goldsizex,goldsizey); 
     if (circleGold < 75)
@@ -1330,12 +1369,15 @@ function reward()
       cursor(HAND);
       if (mouseIsPressed == true)
       {
-        moveGoldx = 20;
-        moveGoldy = 535;
+        moveGoldx = 30;
+        moveGoldy = 515;
         goldsizex = 50;
         goldsizey = 50;
         goldatinv = 1;
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 9ce07f1... V. 2.3
       }
 
     }
@@ -1347,11 +1389,14 @@ function reward()
   
   if (goldatinv == 1)
   {
+<<<<<<< HEAD
     if (Clank.isPlaying() == false)
     {
       Clank.play();
     }
     
+=======
+>>>>>>> parent of 9ce07f1... V. 2.3
     fill(255,50,50);
     if (mouseX >= 475 && mouseX <= 575 && mouseY >= 15 && mouseY <= 60)
     {
@@ -1359,7 +1404,7 @@ function reward()
       cursor(HAND);
       if (mouseIsPressed)
       {
-        canvas = 1;
+        canvas = 3;
       }
     }
     else
@@ -1368,7 +1413,16 @@ function reward()
     }
 
     rect(475,15,100,45);
+<<<<<<< HEAD
+=======
+    
+>>>>>>> parent of 9ce07f1... V. 2.3
     fill(0,0,0);
     text("X",520,45);
   }
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of 9ce07f1... V. 2.3
