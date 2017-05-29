@@ -539,6 +539,7 @@ function c4() // tea room
       cursorimage = "hand";
       if (mouseIsPressed)
         {
+          cursorimage = "arrow";
           canvas = 12;
         }
     }
@@ -568,7 +569,6 @@ function c12() // tea pot challenge
 function c14() // closer up scroll draw
 {
   image(ScrollDesign,270,-50,300,709);
-  
   fill(255,0,0);
   rect(650,0,149,50);
   fill(0,0,0);
