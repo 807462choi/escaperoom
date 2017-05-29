@@ -566,7 +566,7 @@ function c12() // tea pot challenge
   text('X',725,35);
   
   
-  ellipse(100,500,300,300);//hot water
+  ellipse(120,450,300,300);//hot water
   ellipse(300,500,200,100);//water
   ellipse(200,500,100,100);//Tea leaves
   
