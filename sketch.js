@@ -138,7 +138,7 @@ function preload()
   Scrl = loadImage('https://dl.dropboxusercontent.com/s/1a0y1jbicgkqacc/Scroll%20%281%29.png');
   Guitar = loadImage('https://dl.dropboxusercontent.com/s/pjjc43k7ckdo88d/Close%20up%20of%20the%20guitar.png');
   GuitarF = loadImage('https://dl.dropboxusercontent.com/s/ltdc5r71s3lcyhw/Fretboard.jpg');
-  PuzzleS = loadImage('https://dl.dropboxusercontent.com/s/xmxcjqz8slm4a5m/Puzzle%20sign.png');
+  //PuzzleS = loadImage('https://dl.dropboxusercontent.com/s/xmxcjqz8slm4a5m/Puzzle%20sign.png');
 
   magnifier1 = loadImage('https://dl.dropboxusercontent.com/s/vhm0lyt68h2a5x1/magnifier-multimedia-search-zoom-cursor-512.png'); 
   
