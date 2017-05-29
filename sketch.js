@@ -58,7 +58,7 @@ canvas = 0;
 
 function setup()
 {
-  createCanvas(700,600);
+  createCanvas(800,600);
   triangleOrientation = 1;
   triangleOrientation2 = 2;
   triangleOrientation3 = 1;
@@ -115,13 +115,14 @@ function setup()
 
   moveGoldx = 220;
   moveGoldy = 150;
+  
+  canvas = intro;
 
 }
 
 function preload()
 {
   Gold = loadImage('https://dl.dropboxusercontent.com/s/x1mt1n2eqywabny/Coin2.png');  
-<<<<<<< HEAD
   IntroJ = loadImage('https://dl.dropboxusercontent.com/s/adi59zn0kxdwjsd/Japan%20Castle.jpg');
   Prison = loadImage('https://dl.dropboxusercontent.com/s/1y1652mm8hmweh9/Prison.png');
   PrisonO = loadImage('https://dl.dropboxusercontent.com/s/e3exhopjmrhy0x1/Outer%20Prison.png');
@@ -137,66 +138,27 @@ function preload()
   Guitar = loadImage('https://dl.dropboxusercontent.com/s/pjjc43k7ckdo88d/Close%20up%20of%20the%20guitar.png');
   GuitarF = loadImage('https://dl.dropboxusercontent.com/s/ltdc5r71s3lcyhw/Fretboard.jpg');
   PuzzleS = loadImage('https://dl.dropboxusercontent.com/s/xmxcjqz8slm4a5m/Puzzle%20sign.png');
-
-  magnifier1 = loadImage('https://dl.dropboxusercontent.com/s/vhm0lyt68h2a5x1/magnifier-multimedia-search-zoom-cursor-512.png'); 
-  
-  ScrollDesign = loadImage('https://dl.dropboxusercontent.com/s/rhku9wuf76euff1/kakejiku1.jpg');
-  
-  //TeaPzzl = loadImage('https://dl.dropboxusercontent.com/s/rspt86wc7htakjl/TeaPzzl.jpg');
-  
-
-  //MUSIC
-  IntroMus = loadSound('https://dl.dropboxusercontent.com/s/ye7qx0kuqicr8sm/Intro%20Music.mp3');
-
-  PrisonMus = loadSound('https://dl.dropboxusercontent.com/s/ujdo6pmvknf04of/Prison.mp3');
-
-  TeaRMus = loadSound("https://dl.dropboxusercontent.com/s/b46lq79zxcgsly2/Tea%20Room.mp3");
-
-  //Sound FX
-  RockShamble = loadSound("https://dl.dropboxusercontent.com/s/yryang0hctpt9dk/Falling%20Rock%20Sound%20Effect.mp3");
-
-  Clank = loadSound("https://dl.dropboxusercontent.com/s/x82zsucm1ecva79/Cartoon%20Sound%20Effect%20-%20Metal%20Clank%20silence.mp3");
-  
-  WoodD = loadSound("https://dl.dropboxusercontent.com/s/bila3fo9vzzhxh2/Jail%20Metal%20Door%20Sound%20Effect.mp3");
-  
-  SlideD = loadSound("https://dl.dropboxusercontent.com/s/fj91nd6884n1cxs/Open%20Sliding%20Door%20SOUND%20Effect.mp3");
-  
-
-  SDPR1 = loadSound("https://dl.dropboxusercontent.com/s/nvkko4uo5gr1ct8/Slide%20%2B%20Prison.mp3");
     
-  Slide2D = loadSound("https://dl.dropboxusercontent.com/s/fj91nd6884n1cxs/Open%20Sliding%20Door%20SOUND%20Effect.mp3");
   
-  Slide3D = loadSound("https://dl.dropboxusercontent.com/s/fj91nd6884n1cxs/Open%20Sliding%20Door%20SOUND%20Effect.mp3");
   
-  Paper1 = loadSound("https://dl.dropboxusercontent.com/s/4glx0uezmsxbedo/Paper%20Flutter%20Sound%20Effect.mp3");
-  
-  WoodH = loadSound("https://dl.dropboxusercontent.com/s/0ggfl3h0wdlf1kv/Wood%20Hit%20SOUND%20Effect.mp3");
-  
-  WoodH1 = loadSound("https://dl.dropboxusercontent.com/s/0ggfl3h0wdlf1kv/Wood%20Hit%20SOUND%20Effect.mp3");
-
-  
-=======
-  IntroJ =  loadImage('https://dl.dropboxusercontent.com/s/adi59zn0kxdwjsd/Japan%20Castle.jpg');
->>>>>>> parent of 9ce07f1... V. 2.3
 }
 
 
 function draw()
 {
 
-  if (canvas == 1)
+  if (canvas == 1) // Prison
   {
     c1();
   }
-  else if (canvas == 2)
+  else if (canvas == 2) // puzzle
   {
     c2();
   }
-  else if (canvas == 3)
+  else if (canvas == 3) // outer prison
   {
     c3();
   }
-<<<<<<< HEAD
   else if (canvas == 4)// tea
   {
     c4();
@@ -229,7 +191,7 @@ function draw()
   {
     c11();
   }
-  else if (canvas == 12) // tea puzzle
+  else if (canvas == 12)
   {
     c12();
   }
@@ -237,56 +199,29 @@ function draw()
   {
     c13();
   }
-  else if (canvas == 14) //scroll drawing close
-  {
-    c14();
-  }
-  else if (canvas == 15)
+  else if (canvas == 14)
     {
-      c15();
+      c14();
     }
-  else if (canvas == 16)
-    {
-      c16();
-    }
-  else if (canvs == 17)
-    {
-      c17();
-    }
-=======
->>>>>>> parent of 9ce07f1... V. 2.3
   else
   {
     intro();
   }
-  
+
 }
 
 function intro()
 {
 
   background(50,150,150);
-<<<<<<< HEAD
   image(IntroJ,0,-20,800,620);
-  if (IntroMus.isPlaying() == false)
-  {
-    IntroMus.play();
-  }
-
+  
+  
   fill(255,0,0);
   rect(280,300,200,50);
-
-  stroke(255,0,0);
   fill(0,0,0);
-  textSize(50);
-  strokeWeight(5);
-  text('House of Ashikaga',170,250);
-
-  fill(0,0,0);
-  textSize(12);
-  strokeWeight(1);
   text('START',360,330);
-  stroke(0,0,0);
+
 
   if (mouseX >= 280 && mouseX <= 480 && mouseY >= 295 && mouseY <= 350)
   {
@@ -298,7 +233,6 @@ function intro()
     if (mouseIsPressed)
     {
       canvas = 9;
-      IntroMus.stop();
     }
   }
   else
@@ -311,48 +245,42 @@ function intro()
 function c1()
 {
   image(Prison,0,-20,800,620);
-  if (PrisonMus.isPlaying() == false)
-  {
-    PrisonMus.play();
-  }
 
   fill(255,0,0);
   textSize(12);
-
-
+  
+  
   var cursorimage = "arrow";
-=======
-  image(IntroJ,0,0,700,700);
-  
-  fill(255,0,0);
-  rect(250,300,200,50);
-  stroke(0,0,0);
-  text('START',250,250);
-  
->>>>>>> parent of 9ce07f1... V. 2.3
 
-  if(mouseIsPressed)
+  //puzzle
+  if (mouseX >= 10 && mouseX <= 70 && mouseY >= 470 && mouseY <= 500) 
   {
-    canvas = 1;
+    cursorimage = "hand";
+    fill(255,255,255);
+    image(PuzzleS,240,150,300,270);
+    if (mouseIsPressed)
+    {
+      textSize(12);
+      canvas = 6;
+    }
   }
-<<<<<<< HEAD
-
+  
   //Exit
   if (mouseX >= 380 && mouseX <= 520 && mouseY >= 200 && mouseY <= 380 && goldatinv == 1)
   {
     cursorimage = "hand";
     fill(255,255,255);
-    image(HaSgn,150,70,500,375);
+    image(HaSgn,200,150,500,300);
 
     if (mouseIsPressed)
     {
+      
       goldatinv = 0;
       canvas = 3;
-      WoodD.play();
     }
   }
 
-
+  
   if (cursorimage == "arrow")
   {
     cursor(ARROW); 
@@ -363,7 +291,7 @@ function c1()
   }
 
 
-
+  
   itemGrid();
 
 }
@@ -372,49 +300,48 @@ function c9()
 {
   image(Prison,0,-20,800,620);
   image(PrSgn,0,0,800,600);
-
+  
   textSize(30);
   text("Continue",330,500);
-
+  
   if (mouseX >= 330 && mouseX <= 450 && mouseY >= 480 && mouseY <= 600)
+    {
+      cursor(HAND);
+      if (mouseIsPressed)
+      {
+        canvas = 1;
+      }
+    }
+  else
+    {
+      cursor(ARROW);
+    }
+}
+
+
+
+function c6() // OUTER GINSHAW
+{
+ image(OuterGinshaw,0,0,800,600);
+  if (mouseX >= 100 && mouseX <= 700 && mouseY >= 50 && mouseY <= 500)
   {
     cursor(HAND);
     if (mouseIsPressed)
     {
-      canvas = 1;
+      canvas = 2;
     }
   }
-  else
+  else 
   {
     cursor(ARROW);
   }
-}
-=======
+   
 }
 
->>>>>>> parent of 9ce07f1... V. 2.3
-
-function c1()
+function c2() //puzzle
 {
-<<<<<<< HEAD
-  image(OuterGinshaw,0,0,800,600);
-  if (mouseX >= 100 && mouseX <= 700 && mouseY >= 50 && mouseY <= 500)
-=======
-  background(69,69,69);
-  if (mouseIsPressed)
->>>>>>> parent of 9ce07f1... V. 2.3
-  {
-    canvas = 2;
-  }
-<<<<<<< HEAD
+  background(255,255,255);
 
-=======
->>>>>>> parent of 9ce07f1... V. 2.3
-}
-
-function c2()
-{
-  background(255,255,255);         
 
   //outline puzle 
   fill(204,102,0);
@@ -432,13 +359,11 @@ function c2()
   }
   drawTriangle1();
 
-
   if (permenantLock2 == false)
   {
     moveTriangle2();
     changeTriangleOrientation2();
   }
-
   drawTriangle2();
 
   if (permenantLock3 == false)
@@ -463,7 +388,6 @@ function c2()
   drawTriangle5();
   itemGrid();
   reward();
-<<<<<<< HEAD
   strokeWeight(1);
 }
 
@@ -471,19 +395,17 @@ function c2()
 function c3() // outside prison
 {
   image(PrisonO,0,0,800,600);
-  image(TeSgn,395,150,280,187);
+
   if (mouseX >= 180 && mouseX <= 430 && mouseY >= 110 && mouseY <= 480)
   {
     cursor(HAND);
     textSize(20);
     fill(0,0,0);
+    image(TeSgn,400,150,250,187);
     if (mouseIsPressed)
     {
       canvas = 4;
       cursor(ARROW);
-      SlideD.play();
-      PrisonMus.stop();
-      SDPR1.stop();
     }
   }
   else
@@ -501,44 +423,40 @@ function c4() // tea room
   image(TeaR,0,0,800,600);
 
   var cursorimage = "arrow";
-
-
-  if (TeaRMus.isPlaying() == false)
-  {
-    TeaRMus.play();
-  }
-
+  
   if (mouseX >= 0 && mouseX <= 70 && mouseY >= 150 && mouseY <= 510)
-  {
-    cursorimage = "magnifier1";
-    image(HaSgn,160,80,500,385);
-    if (mouseIsPressed)
-    {
-      TeaRMus.stop();
-      canvas = 3;
-      SDPR1.play();
-    }
-  }
-
-
-  if (mouseX >= 750 && mouseX <= 800 && mouseY >= 50 && mouseY <= 550)
   {
     cursorimage = "hand";
     textSize(20);
     fill(0,0,0);
-    image(ArtSgn,160,80,500,385);
+    image(HaSgn,40,100,250,187);
     if (mouseIsPressed)
     {
-      cursorimage = "arrow";
-      canvas = 5;
-      Slide2D.play();
+      canvas = 3;
     }
   }
   else
   {
     textSize(12);
   }
-
+  
+  if (mouseX >= 750 && mouseX <= 780 && mouseY >= 100 && mouseY <= 490)
+  {
+    cursorimage = "hand";
+    textSize(20);
+    fill(0,0,0);
+    image(ArtSgn,300,100,250,187);
+    if (mouseIsPressed)
+    {
+      cursorimage = "arrow";
+      canvas = 5;
+    }
+  }
+  else
+  {
+    textSize(12);
+  }
+  
   if (mouseX >= 600 && mouseX <= 660 && mouseY >= 400 && mouseY <= 450)
   {
     cursorimage = "hand";
@@ -547,7 +465,6 @@ function c4() // tea room
     text('Evidence...?',350,250);
     if (mouseIsPressed)
     {
-      WoodH.play();
       cursorimage = "arrow";
       canvas = 7;
     }
@@ -556,31 +473,10 @@ function c4() // tea room
   {
     textSize(12);
   }
-
+  
   fill(0,0,0);
   textSize(12);
-  
-  if (mouseX >= 250 && mouseX <= 300 && mouseY >= 40 && mouseY <= 285)
-    {
-      cursorimage = "hand";
-      if (mouseIsPressed)
-        {
-          cursorimage = "arrow";
-          canvas = 14;
-          WoodH1.play();
-        }
-    }
-  
-  if (mouseX >= 350 && mouseX <= 450 && mouseY >= 400 && mouseY <= 500)
-    {
-      cursorimage = "hand";
-      if (mouseIsPressed)
-        {
-          canvas = 12;
-        }
-    }
-
-
+   
   if (cursorimage == "arrow")
   {
     cursor(ARROW); 
@@ -589,52 +485,8 @@ function c4() // tea room
   {
     cursor(HAND);
   }
-=======
->>>>>>> parent of 9ce07f1... V. 2.3
 
-}
-
-<<<<<<< HEAD
-function c12() // tea pot challenge
-{
-  //image(TeaPzzl,0,0,800,600);
-  background(255,255,255);
-  
-  
-  
-  fill(255,0,0);
-  rect(650,0,149,50);
-  
-}
-
-function c14() // closer up scroll draw
-{
-  image(ScrollDesign,270,-50,300,709);
-  
-  fill(255,0,0);
-  rect(650,0,149,50);
-  fill(0,0,0);
-  text('X',725,35);
-  
-  if (mouseX >= 650 && mouseX <= 799 && mouseY >= 0 && mouseY <= 50)
-    {
-      cursor(HAND);
-    
-      fill(155,0,0);
-      rect(650,0,149,50);
-      fill(0,0,0);
-      text('X',725,35);
-      if (mouseIsPressed)
-        {
-          canvas = 4;
-        } 
-    }
-  else 
-    {
-      cursor(ARROW);
-    }
-
-  
+  itemGrid();
 }
 
 function c7() //scroll
@@ -652,18 +504,13 @@ function c7() //scroll
     cursorimage = "hand";
     if (mouseIsPressed)
     {
-      Paper1.play();
       cursorimage = "arrow";
       canvas = 8;
     }
   }
-
+  
   if (mouseX >= 650 && mouseX <= 800 && mouseY >= 0 && mouseY <= 50)
   {
-    
-    fill(155,0,0);
-    rect(650,0,149,50);
-    text('Back',700,35);
     cursorimage = "hand";
     if(mouseIsPressed)
     {
@@ -671,7 +518,7 @@ function c7() //scroll
       canvas = 4;
     }
   }
-
+  
   if (cursorimage == "arrow")
   {
     cursor(ARROW); 
@@ -680,7 +527,7 @@ function c7() //scroll
   {
     cursor(HAND);
   }
-
+  
 }
 
 function c8() //read scroll
@@ -688,16 +535,12 @@ function c8() //read scroll
   image(Scrl,0,0,800,600);
   fill(255,0,0);
   rect(650,0,149,50);
-  fill(0,0,0);0
+  fill(0,0,0);
   textSize(20);
-  text('Back',700,35);
-
+  text('Back',725,35);
+  
   if (mouseX >= 650 && mouseX <= 800 && mouseY >= 0 && mouseY <= 50)
   {
-   
-    fill(155,0,0);
-    rect(650,0,149,50);
-    text('Back',700,35);
     cursor(HAND);
     if(mouseIsPressed)
     {
@@ -710,52 +553,40 @@ function c8() //read scroll
   }
 }
 
-function c12() //tea puzzle
-{
-  background(255,255,255);
-
-
-
-
-}
-
 
 
 function c5() //Art room
 {
-  
   image(Art,0,-50,800,600);
   var cursorimage = "arrow";
-
+  
   if (mouseX >= 50 && mouseX <= 160 && mouseY >= 350 && mouseY <= 500)
   {
     cursorimage = "hand";
     if (mouseIsPressed)
-    {
-      cursorimage = "arrow";
-      canvas = 10;
-    }
+      {
+        cursorimage = "arrow";
+        canvas = 10;
+      }
   }
-
+  
   rect(190,160,190,240);
-  
-  
-  
 
+  
+  
   if (mouseX >= 460 && mouseX <= 560 && mouseY >= 160 && mouseY <= 400)
-  {
-    cursorimage = "hand";
-    image(TeSgn,250,150,300,230);
-    if (mouseIsPressed)
     {
-      cursorimage = "arrow";
-      canvas = 4;
-      Slide3D.play();
+      cursorimage = "hand";
+      image(TeSgn,250,150,300,230);
+      if (mouseIsPressed)
+        {
+          cursorimage = "arrow";
+          canvas = 4;
+        }
+      
     }
-
-  }
-
-
+  
+  
   if (cursorimage == "arrow")
   {
     cursor(ARROW); 
@@ -773,16 +604,16 @@ function c10() // guitar
 {
   image(Guitar,0,0,800,600);
   var cursorimage = "arrow";
-
+  
   if (mouseX >= 250 && mouseX <= 450 && mouseY >= 150 && mouseY <= 520)
-  {
-    cursorimage = "hand";
-    if (mouseIsPressed)
     {
-      canvas = 11; 
+      cursorimage = "hand";
+      if (mouseIsPressed)
+        {
+          canvas = 11; 
+        }
     }
-  }
-
+  
   if (cursorimage == "arrow")
   {
     cursor(ARROW); 
@@ -802,17 +633,18 @@ function c11()
   rect(660,0,120,50);
   fill(0,0,0);
   text('X',715,30);
-
+  
   if (mouseX >= 660 && mouseX <= 780 && mouseY >= 0 && mouseY <= 120)
-  {
-    cursorimage = "hand";
-    if (mouseIsPressed)
     {
-      cursorimage = "arrow";
-      canvas = 5;
+      cursorimage = "hand";
+      if (mouseIsPressed)
+        {
+          cursorimage = "arrow";
+          canvas = 5;
+        }
     }
-  }
-
+  
+  
   if (cursorimage == "arrow")
   {
     cursor(ARROW); 
@@ -821,40 +653,27 @@ function c11()
   {
     cursor(HAND);
   }
+  
 }
 
 
 
-=======
-function c3()
-{
-  background(12,123,254);
-  
-  
-  itemGrid();
-}
-
->>>>>>> parent of 9ce07f1... V. 2.3
 function itemGrid()
 {
   fill(50,50,50);
-  rect(5,493,720,85);
+  rect(0,520,700,85);
   fill(125,125,125);
-  rect(20,500,70,70);
+  rect(10,525,70,70);
   fill(125,125,125);
-  rect(100,500,70,70);
+  rect(90,525,70,70);
   fill(125,125,125);
-<<<<<<< HEAD
   rect(170,525,70,70);
-
+  
   if (goldatinv == 1)
   {
-    image(Gold,moveGoldx,moveGoldy,goldsizex,goldsizey); 
+  image(Gold,moveGoldx,moveGoldy,goldsizex,goldsizey); 
   }
-
-=======
-  rect(180,500,70,70);
->>>>>>> parent of 9ce07f1... V. 2.3
+  
 }
 
 
@@ -1152,8 +971,6 @@ function changeTriangleOrientation5()
 
 }
 
-
-
 function mouseReleased()
 {
   if (lock)
@@ -1237,7 +1054,6 @@ function mouseReleased()
   {
     lockTriangleOrientation5 = false;
   }
-
 }
 
 function drawTriangle1()
@@ -1340,8 +1156,6 @@ function drawTriangle5()
   }
 }
 
-
-
 function maze()
 {
   stroke(0,0,0);
@@ -1356,12 +1170,9 @@ function reward()
   if (lazy == 1)
   {
     //    GoldState = 0;
-<<<<<<< HEAD
-=======
-    
-    
-    
->>>>>>> parent of 9ce07f1... V. 2.3
+
+
+
     text(circleGold,10,100);
     image(Gold,moveGoldx,moveGoldy,goldsizex,goldsizey); 
     if (circleGold < 75)
@@ -1369,15 +1180,11 @@ function reward()
       cursor(HAND);
       if (mouseIsPressed == true)
       {
-        moveGoldx = 30;
-        moveGoldy = 515;
+        moveGoldx = 20;
+        moveGoldy = 535;
         goldsizex = 50;
         goldsizey = 50;
         goldatinv = 1;
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 9ce07f1... V. 2.3
       }
 
     }
@@ -1386,17 +1193,9 @@ function reward()
       cursor(ARROW);
     }
   }
-  
+
   if (goldatinv == 1)
   {
-<<<<<<< HEAD
-    if (Clank.isPlaying() == false)
-    {
-      Clank.play();
-    }
-    
-=======
->>>>>>> parent of 9ce07f1... V. 2.3
     fill(255,50,50);
     if (mouseX >= 475 && mouseX <= 575 && mouseY >= 15 && mouseY <= 60)
     {
@@ -1404,7 +1203,7 @@ function reward()
       cursor(HAND);
       if (mouseIsPressed)
       {
-        canvas = 3;
+        canvas = 1;
       }
     }
     else
@@ -1413,16 +1212,10 @@ function reward()
     }
 
     rect(475,15,100,45);
-<<<<<<< HEAD
-=======
-    
->>>>>>> parent of 9ce07f1... V. 2.3
+
     fill(0,0,0);
     text("X",520,45);
   }
 }
-<<<<<<< HEAD
-=======
 
 
->>>>>>> parent of 9ce07f1... V. 2.3
