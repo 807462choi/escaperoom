@@ -567,7 +567,7 @@ function c12() // tea pot challenge
   
   fill(255,255,255);
   ellipse(130,420,300,300);//hot water
-  ellipse(345,405,150,150);//water
+  ellipse(345,395,150,150);//water
   ellipse(478,448,150,150);//Tea leaves
   
   if (mouseX >= 650 && mouseX <= 799 && mouseY >= 0 && mouseY <= 50)
