@@ -144,7 +144,7 @@ function preload()
   
   ScrollDesign = loadImage('https://dl.dropboxusercontent.com/s/rhku9wuf76euff1/kakejiku1.jpg')
   
-  TeaPzzl = loadImage('https://dl.dropboxusercontent.com/s/w3trbm8ujdepm2d/TeaPzzl.jpg')
+  TeaPzzl = loadImage('https://dl.dropboxusercontent.com/s/rspt86wc7htakjl/TeaPzzl.jpg')
   
 
   //MUSIC
