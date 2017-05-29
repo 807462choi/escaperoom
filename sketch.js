@@ -560,7 +560,7 @@ function c4() // tea room
 function c12() // tea pot challenge
 {
   image(TeaPzzl,0,0,800,600);
-  image(TeaLeaves,490,450,50,50);
+
   var cursorimage = "arrow";
   
   fill(255,0,0);
@@ -589,7 +589,8 @@ function c12() // tea pot challenge
   {
     cursor(HAND);
   }
-
+  image(TeaLeaves,490,450,50,50);
+  
 }
 }
 
