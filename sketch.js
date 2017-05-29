@@ -143,7 +143,7 @@ function preload()
   
   ScrollDesign = loadImage('https://dl.dropboxusercontent.com/s/rhku9wuf76euff1/kakejiku1.jpg');
   
-  TeaPzzl = loadImage('https://dl.dropboxusercontent.com/s/rspt86wc7htakjl/TeaPzzl.jpg');
+  //TeaPzzl = loadImage('https://dl.dropboxusercontent.com/s/rspt86wc7htakjl/TeaPzzl.jpg');
   
 
   //MUSIC
@@ -583,8 +583,8 @@ function c4() // tea room
 
 function c12() // tea pot challenge
 {
-  image(TeaPzzl,0,0,800,600);
-  
+  //image(TeaPzzl,0,0,800,600);
+  background(255,255,255);
   
   
   
