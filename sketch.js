@@ -53,8 +53,6 @@ var goldsizex = 150;
 var goldsizey = 150;
 var goldatinv = 0;
 
-var drawCanvasButtons;
-
 canvas = 0;
 
 function setup()
