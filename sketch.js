@@ -665,13 +665,14 @@ function c8() //read scroll
   rect(650,0,149,50);
   fill(0,0,0);
   textSize(20);
-  text('Back',725,35);
+  text('Back',715,35);
   
   if (mouseX >= 650 && mouseX <= 800 && mouseY >= 0 && mouseY <= 50)
   {
     fill(155,0,0);
     rect(650,0,149,50);
-    text('Back',700,35);
+    fill(0,0,0);
+    text('Back',715,35);
     cursor(HAND);
     if(mouseIsPressed)
     {
@@ -711,6 +712,8 @@ function c5() //Art room
         {
           cursorimage = "arrow";
           canvas = 4;
+          Slide3D.play();
+          f
         }
       
     }
