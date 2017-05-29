@@ -115,7 +115,8 @@ function setup()
 
   moveGoldx = 220;
   moveGoldy = 150;
-
+  
+  canvas = intro;
 }
 
 function preload()
@@ -173,11 +174,7 @@ function preload()
   
   WoodH1 = loadSound("https://dl.dropboxusercontent.com/s/0ggfl3h0wdlf1kv/Wood%20Hit%20SOUND%20Effect.mp3");
 
-  
   IntroJ =  loadImage('https://dl.dropboxusercontent.com/s/adi59zn0kxdwjsd/Japan%20Castle.jpg');
-
-  IntroJ =  loadImage('https://dl.dropboxusercontent.com/s/adi59zn0kxdwjsd/Japan%20Castle.jpg');
-
 }
 
 
@@ -1376,16 +1373,6 @@ function reward()
   if (lazy == 1)
   {
     //    GoldState = 0;
-
-
-    
-    
-    
-
-    
-    
-    
-
     text(circleGold,10,100);
     image(Gold,moveGoldx,moveGoldy,goldsizex,goldsizey); 
     if (circleGold < 75)
@@ -1398,11 +1385,6 @@ function reward()
         goldsizex = 50;
         goldsizey = 50;
         goldatinv = 1;
-
-
-
-
-
       }
 
     }
@@ -1439,12 +1421,6 @@ function reward()
     }
 
     rect(475,15,100,45);
-
-
-    
-
-    
-
     fill(0,0,0);
     text("X",520,45);
   }
