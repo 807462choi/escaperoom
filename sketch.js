@@ -325,11 +325,8 @@ function c1()
   {
     cursor(HAND);
   }
-
-
   
   itemGrid();
-
 }
 
 function c9()
@@ -442,7 +439,9 @@ function c3() // outside prison
     {
       canvas = 4;
       cursor(ARROW);
+      SlideD.play();
       PrisonMus.stop();
+      SDPR1.stop();
     }
   }
   else
@@ -470,12 +469,12 @@ function c4() // tea room
   if (mouseX >= 0 && mouseX <= 70 && mouseY >= 150 && mouseY <= 510)
   {
     cursorimage = "hand";
-    textSize(20);
-    fill(0,0,0);
     image(HaSgn,160,80,500,385);
     if (mouseIsPressed)
     {
+      TeaRMus.stop();
       canvas = 3;
+      SDPR1.play();
     }
   }
   else
@@ -492,7 +491,7 @@ function c4() // tea room
     if (mouseIsPressed)
     {
       cursorimage = "arrow";
-      TeaRMus.stop();
+      Slide2D.play();
       canvas = 5;
     }
   }
@@ -509,6 +508,7 @@ function c4() // tea room
     text('Evidence...?',350,250);
     if (mouseIsPressed)
     {
+      WoodH.play();
       cursorimage = "arrow";
       canvas = 7;
     }
@@ -521,10 +521,25 @@ function c4() // tea room
   fill(0,0,0);
   textSize(12);
   
-  
-  rect(350,400,100,200);
-  
-  
+  if (mouseX >= 250 && mouseX <= 300 && mouseY >= 40 && mouseY <= 285)
+    {
+      cursorimage = "hand";
+      if (mouseIsPressed)
+        {
+          cursorimage = "arrow";
+          canvas = 14;
+          WoodH1.play();
+        }
+    }
+
+  if (mouseX >= 350 && mouseX <= 450 && mouseY >= 400 && mouseY <= 500)
+    {
+      cursorimage = "hand";
+      if (mouseIsPressed)
+        {
+          canvas = 12;
+        }
+    }
    
   if (cursorimage == "arrow")
   {
@@ -536,6 +551,46 @@ function c4() // tea room
   }
 
   itemGrid();
+}
+
+function c12() // tea pot challenge
+{
+  image(TeaPzzl,0,0,800,600);
+  
+  
+  fill(255,0,0);
+  rect(650,0,149,50);
+  
+}
+
+function c14() // closer up scroll draw
+{
+  image(ScrollDesign,270,-50,300,709);
+  
+  fill(255,0,0);
+  rect(650,0,149,50);
+  fill(0,0,0);
+  text('X',725,35);
+  
+  if (mouseX >= 650 && mouseX <= 799 && mouseY >= 0 && mouseY <= 50)
+    {
+      cursor(HAND);
+    
+      fill(155,0,0);
+      rect(650,0,149,50);
+      fill(0,0,0);
+      text('X',725,35);
+      if (mouseIsPressed)
+        {
+          canvas = 4;
+        } 
+    }
+  else 
+    {
+      cursor(ARROW);
+    }
+
+  
 }
 
 function c7() //scroll
@@ -1240,7 +1295,6 @@ function reward()
         goldsizex = 50;
         goldsizey = 50;
         goldatinv = 1;
-        Clank.play();
       }
 
     }
@@ -1252,7 +1306,10 @@ function reward()
 
   if (goldatinv == 1)
   {
-    Clank.stop();
+  	if (Clank.isPlaying() == false)
+  	{
+  	  Clank.play();
+  	}
     fill(255,50,50);
     if (mouseX >= 475 && mouseX <= 575 && mouseY >= 15 && mouseY <= 60)
     {
