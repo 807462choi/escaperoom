@@ -142,9 +142,9 @@ function preload()
 
   magnifier1 = loadImage('https://dl.dropboxusercontent.com/s/vhm0lyt68h2a5x1/magnifier-multimedia-search-zoom-cursor-512.png'); 
   
-  ScrollDesign = loadImage('https://dl.dropboxusercontent.com/s/rhku9wuf76euff1/kakejiku1.jpg')
+  ScrollDesign = loadImage('https://dl.dropboxusercontent.com/s/rhku9wuf76euff1/kakejiku1.jpg');
   
-  TeaPzzl = loadImage('https://dl.dropboxusercontent.com/s/rspt86wc7htakjl/TeaPzzl.jpg')
+  TeaPzzl = loadImage('https://dl.dropboxusercontent.com/s/rspt86wc7htakjl/TeaPzzl.jpg');
   
 
   //MUSIC
