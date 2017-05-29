@@ -559,11 +559,34 @@ function c4() // tea room
 function c12() // tea pot challenge
 {
   image(TeaPzzl,0,0,800,600);
-  
+  var cursorimage = "arrow";
   
   fill(255,0,0);
   rect(650,0,149,50);
   
+  if (mouseX >= 650 && mouseX <= 799 && mouseY >= 0 && mouseY <= 50)
+  {
+    cursorimage = "hand";
+    if (mouseIsPressed)
+    {
+      canvas = 4;
+    }
+    
+    
+    
+    
+    
+    
+    
+      if (cursorimage == "arrow")
+  {
+    cursor(ARROW); 
+  }
+  else
+  {
+    cursor(HAND);
+  }
+
 }
 
 function c14() // closer up scroll draw
@@ -658,17 +681,6 @@ function c8() //read scroll
     cursor(ARROW);
   }
 }
-
-function c14() //tea puzzle
-{
-  background(255,255,255);
-  
-  
-  
-  
-}
-
-
 
 function c5() //Art room
 {
