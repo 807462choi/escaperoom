@@ -578,7 +578,7 @@ function c12() // tea pot challenge
     
     
     
-      if (cursorimage == "arrow")
+  if (cursorimage == "arrow")
   {
     cursor(ARROW); 
   }
@@ -587,6 +587,7 @@ function c12() // tea pot challenge
     cursor(HAND);
   }
 
+}
 }
 
 function c14() // closer up scroll draw
