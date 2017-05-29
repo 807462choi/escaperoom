@@ -713,7 +713,6 @@ function c5() //Art room
           cursorimage = "arrow";
           canvas = 4;
           Slide3D.play();
-          f
         }
       
     }
